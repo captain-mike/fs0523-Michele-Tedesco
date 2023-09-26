@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+
+        <input type="text" required maxlength="2" placeholder="Il tuo nome" name="nome">
+
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome" name="cognome">
+        
+        <input type="number" required min="1" max="5">
+        
+        <input type="email" placeholder="Email" name="email">
+        <input type="password" placeholder="Password" name="pwd">
+        
+        <label for="città">Città</label>
+        <select name="city" id="città">
+            <option value="">seleziona</option>
+            <option value="roma">Roma</option>
+            <option value="milano">Milano</option>
+            <option value="napoli">Napoli</option>
+        </select>
+
+        <textarea name="messaggio"></textarea>
+
+        <button>Invia</button>
+        <!-- 
+            puoi usare anche questo in alternativa
+            <input type="submit" value="invia"> -->
+
+    </form>
+    
+</body>
+</html>
