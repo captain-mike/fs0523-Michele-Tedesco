@@ -26,7 +26,7 @@ div{peso: 1
 
 .colore-viola{/* peso: 10 */
     color:purple;
-}
+} 
 .colore-rosso{/* peso: 10 */
     color:red;
 }
@@ -34,6 +34,18 @@ div{peso: 1
 
 /* selezione gerarchica */
 
+
 .area-sottolineata span{/* peso : 10 + 1 = 11 */
+    /* qualunque span dentro al div, anche se figlio di figli */
     text-decoration: underline;
 }
+
+.area-sottolineata > span{/* peso : 1 + 10 + 1 = 11 */
+    /* qualunque span dentro al div, ma non figli di figli */
+    font-style: italic;
+    color: red;
+}
+
+#menu-principale li a{}
+
+/* selettori avanzati */
