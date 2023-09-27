@@ -1,0 +1,106 @@
+.colore-verde{
+    color: green;
+}
+.grassetto{
+    font-weight: bold;
+}
+
+#colore-blu{
+    color: blue;
+}
+
+/* conflitti 
+e specificità */
+
+/*
+
+div{peso: 1
+    background-color:red
+}
+
+*/
+
+#colore-arancio{/* peso : 100 */
+    color: orange;
+}
+
+.colore-viola{/* peso: 10 */
+    color:purple;
+} 
+.colore-rosso{/* peso: 10 */
+    color:red;
+}
+
+
+/* selezione gerarchica */
+
+
+.area-sottolineata span{/* peso : 10 + 1 = 11 */
+    /* qualunque span dentro al div, anche se figlio di figli */
+    text-decoration: underline;
+}
+
+.area-sottolineata > span{/* peso : 1 + 10 + 1 = 11 */
+    /* qualunque span dentro al div, ma non figli di figli */
+    font-style: italic;
+    color: red;
+}
+
+/* selettori avanzati */
+
+blockquote + p{/*la prima p dopo un blockquote*/
+    color:aqua;
+}
+
+p ~ strong{/*tutti gli strong dopo un p*/
+    border: 1px solid #000;
+}
+
+/*tabella*/
+
+table{
+    width: 100%;
+}
+td{
+    border: 1px solid #000;
+}
+
+tr:first-child{
+    font-weight: bold;
+}
+
+table tr:nth-of-type(odd){
+    background-color: grey;
+}
+
+table tr:nth-of-type(odd) td:first-child{
+    /*la prima td che si trova in una tr dispari di ogni tabella*/
+    background-color: black;
+    color: white;
+}
+
+button:hover{/*al passaggio del mouse su un qualunque button*/
+    background-color: blue;
+    transition: background-color 0.5s;
+}
+
+/*pseudo-elementi*/
+td::before{
+    content: "<";
+}
+td::after{
+    content: ">";
+    animation-name:ruota;
+    animation-duration: 1s;
+    background-color: red;
+    animation-iteration-count: infinite;
+    display: block;
+    position: absolute;
+}
+/*solo per una prova*/
+@keyframes ruota {
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(0deg);}
+}
+
