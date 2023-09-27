@@ -1,0 +1,36 @@
+.logo-container{
+    padding: 10px;
+    text-align: center;
+}
+.logo-container img{
+    width: 200px
+}
+
+.yellow-bar {
+    border-top: 1px solid yellow;
+    background-color: rgb(253 251 241);
+    padding: 20px;
+    text-align: center;
+}
+.container{
+    width:800px;
+    margin: 0 auto;
+}
+
+
+.post-image{
+    margin: 0;
+}
+.post-image img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+.featured{
+    padding: 10px;
+    border-left: 1px solid orange;
+}
+.featured p, .featured h3{
+    margin: 0;
+}
