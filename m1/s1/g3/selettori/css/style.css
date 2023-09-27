@@ -1,0 +1,39 @@
+.colore-verde{
+    color: green;
+}
+.grassetto{
+    font-weight: bold;
+}
+
+#colore-blu{
+    color: blue;
+}
+
+/* conflitti 
+e specificità */
+
+/*
+
+div{peso: 1
+    background-color:red
+}
+
+*/
+
+#colore-arancio{/* peso : 100 */
+    color: orange;
+}
+
+.colore-viola{/* peso: 10 */
+    color:purple;
+}
+.colore-rosso{/* peso: 10 */
+    color:red;
+}
+
+
+/* selezione gerarchica */
+
+.area-sottolineata span{/* peso : 10 + 1 = 11 */
+    text-decoration: underline;
+}
