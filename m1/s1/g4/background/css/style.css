@@ -1,0 +1,38 @@
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.contenitore{
+    border: 1px solid #000;
+    width: 200px;
+}
+
+.forma{
+    border: 1px solid #000;
+    height: 350px;
+    background-repeat: no-repeat;
+}
+
+.contenitore2{
+    background-image: url(../img/immagine.jpg);
+    background-position: center;
+}
+.contenitore3{
+    background-image: url(../img/immagine.jpg);
+    background-size: contain;
+}
+.contenitore4{
+    background-image: url(../img/immagine-orizzontale.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.contenitore5{
+    background-image:  url(https://picsum.photos/200/300), url(../img/immagine-orizzontale.jpg);
+    background-repeat: no-repeat, repeat;
+    background-size: 100px, cover;
+    background-position: center;
+}
+.contenitore6{
+    background-image: 
+}
