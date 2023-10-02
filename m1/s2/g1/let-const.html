@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        {
+            //let è soggetto al block scope
+            let a = 0;//nata dentro il blocco, quindi non esiste fuori
+            console.log(a);
+            var b = 1;//nata dentro il blocco ma è una var, quindi è globale
+        }
+
+        console.log(b);
+        //console.log(a); Uncaught ReferenceError: a is not defined
+
+
+        let c = 2;
+        {
+            console.log(c)//c nasce esternamente a questo blocco, quindi è disponibile
+        }
+        
+        let d;
+        {
+            d = 'Ciao';
+        }
+        console.log(d);
+
+
+        let f = 3;
+        {
+            //console.log(f);//la variabile globale f viene ignorata
+            let f = 4;//ora questa è la viaribile f a cui il blocco si riferirà
+        }
+        
+
+        /*
+        Costanti
+        */
+
+        const MIO_NOME = 'Mario';
+        //MIO_NOME = 'Pippo';Assignment to constant variable.
+
+        const PERSONA = {
+            nome : 'Mario',
+            cognome : 'Rossi'
+        }
+
+        // Object.freeze(PERSONA); Per bloccare modifiche ai valori di un oggetto
+        PERSONA.nome = 'Marco';
+
+        console.log(PERSONA);
+
+
+
+    </script>
+</body>
+</html>
