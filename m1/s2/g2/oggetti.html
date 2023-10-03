@@ -24,20 +24,61 @@
         /*Lavorare con i valori degli oggetti*/
 
         {
+            // lettura e scrittura di proprietà
 
+            let pizza = {
+                gusto : 'Margherita',
+                prezzo : 5,
+                'nome-proprietà' : 'test'
+            }
+
+            console.table(pizza);
+
+            console.log(pizza.gusto);//lettura
+            console.log(pizza.prezzo);
+            //console.log(pizza['nome-proprietà']); per accedere a proprietà, di solito quelle con sintassi non accettata in js
+            
+            pizza.prezzo = 6;
+            
+            console.log(pizza.prezzo);
+
+            delete pizza.prezzo;//elimino la coppia di chiave e valore
+
+            console.log(pizza);
+        }
+
+        {
+            // Copiare oggetti
             let pizza = {
                 gusto : 'Margherita',
                 prezzo : 5
             }
 
-            console.table(pizza);
+            let pizza2 = {...pizza}
+            //oppure puoi usare questo sistema
+            //let pizza2 = Object.assign(pizza);
 
-            console.log(pizza.gusto);
-            console.log(pizza.prezzo);
-            
-            pizza.prezzo = 6;
-            
-            console.log(pizza.prezzo);
+            pizza2.prezzo = 5.5
+
+            console.log(pizza, pizza2);
+
+        }
+
+        {
+
+            //funzione costruttore
+            //che costruisce oggetti
+            function Pizza(gusto, prezzo){
+                this.gusto = gusto;
+                this.prezzo = prezzo;
+            }
+
+            let margherita = new Pizza('Margherita',5);
+            let diavola = new Pizza('Diavola',1);
+         
+
+            console.log(margherita, diavola);
+
         }
 
     </script>

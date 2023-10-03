@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let anni = prompt('Quanti anni hai?');
+
+        if(anni){
+
+            if(anni >= 18 && anni <= 125){
+                document.write('Maggiorenne');
+            }else if(anni > 125){
+                document.write('Sei antico');
+            }else{
+                document.write('Minorenne');
+                location.href = 'https://www.youtube.com/watch?v=BEsQaawYly0';
+            }
+        }
+
+    </script>
+
+</body>
+</html>

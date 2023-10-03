@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let arr = [];
+
+        let array = [
+            'test',
+            0,
+            true,
+            {},
+            []
+        ]
+
+        
+        /* lettura e scrittura */
+        let numeri = [150,2,3,4,5,6];
+
+        console.log(numeri[0]);//lettura
+
+        
+        numeri[1] = 56;//scrittura
+
+        console.log(numeri);
+
+        //prendere sempre l'ultimo elemento dell'array
+
+        console.log('Ultimo valore dell\'array = ' + numeri[numeri.length - 1])
+        
+        /*aggiunta di valori ad un array*/
+        
+        //numeri[8] = 100; questo sistema crea buchi, va evitato
+        numeri.push(100)
+        numeri.push(1900,50)
+        console.log(numeri);
+        
+
+        /*
+        proprietà length        
+        */
+
+        console.log(numeri.length);//leggo la lunghezza dell'array
+        let stringa = 'Ciao';
+        console.log(stringa.length);//leggo la lunghezza della stringa
+
+        /*
+        
+        verifica tipi dato
+
+        */
+
+        console.log(typeof 'test');//string
+        console.log(typeof 0);//number
+        console.log(typeof {});//object
+        console.log(typeof []);//object
+        console.log(Array.isArray([]));//true
+
+
+    </script>
+</body>
+</html>

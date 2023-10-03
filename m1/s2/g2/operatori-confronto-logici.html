@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let numero = 30;
+
+        console.log( numero == 30 );//true
+        console.log( numero == '30' );//true
+        console.log( numero === '30' );//false, il valore ed il tipo di dato devono essere strettamente uguali
+
+        console.log( numero > 30 );//false
+        console.log( numero < 30 );//false
+        console.log( numero >= 30 );//true
+        console.log( numero <= 30 );//true
+        
+        console.log( numero != 30 );//false
+        console.log( numero != 29 );//true
+        console.log( numero !== 30 );//false, il valore e il tipo di dato sono uguali
+        
+        console.log( !(numero == 30) );//true
+
+        console.log( !true );//false
+        console.log( !false );//true
+        console.log( !!!!!!!!!!!!!!!!!!!!!!!!!!!!!false );//true
+
+        /*Operatori logici*/
+
+        console.log( numero > 18 && numero < 50 );//true
+        console.log( numero > 18 && numero < 20 );//false
+        console.log( numero > 18 || numero < 20 );//true
+
+        
+
+    </script>
+</body>
+</html>
