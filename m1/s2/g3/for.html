@@ -17,11 +17,13 @@
 
         document.write('<hr>');
 
+        
+
         //come ciclare un array
-        let pizze = ['Margherita', 'Diavola', 'Capricciosa'];
+        let pizze = ['Margherita', 'Diavola', 'Capricciosa', 'Mimosa' ,'4 stagioni'];
 
         document.write('<ul>')//chiedo a js di scrivere un tag ul aperto
-        for (let x = 0; x < 3; x++) {
+        for (let x = 0; x < pizze.length; x++) {
 
             document.write('<li>' + pizze[x] +'</li>');
             //chiedo a js di scrivere un tag li completo contenente il nome della pizza che viene ciclata
