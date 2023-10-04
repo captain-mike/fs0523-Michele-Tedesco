@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //ciclo for
+        for (let i = 0; i < 10; i++) {
+            document.write(i)
+        }
+
+        document.write('<hr>');
+
+        //come ciclare un array
+        let pizze = ['Margherita', 'Diavola', 'Capricciosa'];
+
+        document.write('<ul>')//chiedo a js di scrivere un tag ul aperto
+        for (let x = 0; x < 3; x++) {
+
+            document.write('<li>' + pizze[x] +'</li>');
+            //chiedo a js di scrivere un tag li completo contenente il nome della pizza che viene ciclata
+
+        }
+        document.write('</ul>')//chiedo a js di scrivere un tag ul chiuso
+
+    </script>
+
+</body>
+
+</html>
