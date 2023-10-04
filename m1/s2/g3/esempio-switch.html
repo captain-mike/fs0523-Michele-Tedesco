@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select id="frutti">
+        <option value="">--Scegli frutto--</option>
+        <option value="Mela">Mela</option>
+        <option value="Banana">Banana</option>
+        <option value="Kiwy">Kiwy</option>
+        <option value="Papaya">Papaya</option>
+        <option value="Mango">Mango</option>
+        <option value="Anguria">Anguria</option>
+    </select>
+
+    <div id="messaggio"></div>
+
+    <script>
+
+        
+        //seleziono l'elemento con di frutti, e lo salvo nella let frutti
+        let frutti = document.getElementById("frutti");
+        
+        //usando la let frutti appena creata
+        //chiedo a js di lanciare una funzione ogni volta che l'utente cambia frutto
+        frutti.addEventListener('change', function(){//funzione anonima
+
+            //la funzione anonima esegue la funzione chiamata scelta
+            //inserendo al suo interno il valore del frutto selezionato
+            scelta(frutti.value);
+            
+        })
+        
+        function scelta(frutto) {
+
+            let messaggio = document.getElementById('messaggio');//seleziono il div messaggio per poterci scrivere dentro in futuro
+            let risultato;//preparo una variabile in cui scriverò il messaggio da mostrare all'utente
+
+            switch (frutto) {
+
+                case 'Mela':
+                    risultato = 'La mela costa 0.99€';//inserisco il messaggio che in futuro sarà mostrato all'utente
+                    break;
+                case 'Banana':
+                    risultato = 'La banana costa 1.99€';//inserisco il messaggio che in futuro sarà mostrato all'utente
+                    break;
+                case 'Kiwy':
+                    risultato = 'Il kiwi costa 0.88€';//inserisco il messaggio che in futuro sarà mostrato all'utente
+                    break;
+                case 'Papaya':
+                case 'Mango':
+                    risultato = 'Papaya e Mango costano 5€';//inserisco il messaggio che in futuro sarà mostrato all'utente
+                    break;
+                default:
+                    risultato = 'Non abbiamo ' + frutto;
+            }
+
+            messaggio.textContent = risultato;//ora mostro il messaggio scrivendolo come contenuto del div con id messaggio
+        }
+
+    </script>
+</body>
+
+</html>
