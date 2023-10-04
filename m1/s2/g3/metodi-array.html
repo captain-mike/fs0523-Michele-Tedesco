@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let pizze = ['Margherita', 'Diavola', 'Capricciosa', 'Mimosa' ,'4 stagioni'];
+
+        pizze = pizze.filter(function(elemento){
+            return elemento != 'Capricciosa';
+        })
+
+        pizze = pizze.map(function(elemento){
+            return '<b>'+ elemento +'</b>';  
+        })       
+
+        pizze.forEach(function(elemento, index){
+            document.write((index + 1) + ' : ' + elemento + '<br>');
+        })
+
+
+
+    </script>
+</body>
+</html>
