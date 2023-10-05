@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function somma(){
+            //questa funzione non restituisce nulla perché non ha un return
+            document.write(5 + 5);
+        }
+
+        somma();
+        let x = somma();//se usiamo la funzione che non ha return per valorizzare una variabile, avremo undefined
+
+
+
+        function restituisciSomma(){
+            console.log('Eseguita');
+            return 5 + 5;
+        }
+        //una funzione che restituisce qualcosa, può essere utilizzata come valore
+
+        let risultato = restituisciSomma();
+
+        console.log( restituisciSomma(), risultato );
+
+
+        /* caso sbagliato */
+
+        let risultatoSbagliato = restituisciSomma;//così non ottengo il risultato ma una copia della funzione
+
+        console.log(risultatoSbagliato);
+
+    </script>
+</body>
+</html>

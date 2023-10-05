@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //funzioni con valore di default
+        function somma(a = 0, b = 0, c = 0, d = 0) {
+            return a + b + c + d;
+        }
+
+        let risultato = somma(3, 4, 5);
+        let risultato2 = somma();
+
+        console.log(risultato, risultato2);
+
+
+        // ... è il rest operator
+        function sommaPremium(...numeri){//tutti i valori vengono messi dentro un array chiamato numeri
+            //modalità 1 
+            let risultato = 0;
+            for(var i = 0; i < numeri.length;i++){
+                risultato += numeri[i];
+            }
+            return risultato;
+                
+            //modalità 2
+            // let risultato = 0;
+            // for(var n of numeri){
+            //     risultato += n;
+            // }
+            // return risultato;
+            
+            //modalità 2
+            // let risultato = 0;
+            // numeri.forEach(function(numero){
+            //     risultato += numero
+            // })
+            // return risultato;
+
+            //modalità avanzata
+            //return numeri.reduce((p,c)=> p + c)
+        }
+
+        let risultatoPremium = sommaPremium(3, 4, 5,5,76,8,2,453,786);
+
+        console.log(risultatoPremium);
+
+
+
+    </script>
+</body>
+
+</html>

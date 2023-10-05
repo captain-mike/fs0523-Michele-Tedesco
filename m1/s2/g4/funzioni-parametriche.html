@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function somma(a,b){
+            //questa funzione non restituisce nulla perché non ha un return
+            document.write('Il valore del parametro a è pari a : ' + a + '<br>' );
+            document.write('Il valore del parametro b è pari a : ' + b + '<br>' );
+            document.write('Totale somma : ' + (a + b) + '<hr>');
+        }
+
+        somma(2,4);
+
+        somma(20,48);
+
+        somma(250,748);
+
+
+        
+        function restituisciSomma(a,b){
+            return a + b;
+        }
+
+        console.log( restituisciSomma(3,7) );
+        document.write( restituisciSomma(4,8) )
+
+
+    </script>
+</body>
+</html>
