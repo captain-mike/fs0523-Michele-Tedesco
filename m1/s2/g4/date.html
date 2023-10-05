@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let adesso = new Date();
+        console.log(adesso);
+
+        console.log(
+            adesso.getFullYear(),
+            adesso.getMonth(),//I mesi partono da zero
+            adesso.getDay(),//è il giorno della settimana e non del mese, parte da zero, indicando come primo giorno la domenica
+            adesso.getTime(),//timestamp
+            adesso.toLocaleDateString('it-IT',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+        );
+
+
+        adesso.setMonth( adesso.getMonth() + 1 );
+
+        console.log(
+            adesso.toLocaleDateString('it-IT',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+        );
+
+
+
+
+
+    </script>
+</body>
+</html>

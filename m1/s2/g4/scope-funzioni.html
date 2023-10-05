@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let a = 0;
+        
+        function test(){
+            console.log(a);//funziona perché la let a è globale
+            let b = 0;
+        }
+        
+        console.log(b);//undefined variable
+       
+
+        let x = 10;
+        let y = 20;
+
+        function par(x,y){//x ed y non hanno a che fare con le variabili x ed y
+            return x + y;
+        }
+
+        par(4,7)
+    </script>
+</body>
+</html>

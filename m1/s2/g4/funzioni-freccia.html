@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function test(){
+            return 'Ciao Mondo';
+        }
+        
+        const testFreccia = () => 'Ciao Mondo';//sintassi one line va bene solo per esecuzioni di righe singole
+        
+        console.log( testFreccia() );//ciao Mondo
+        
+        const raddoppia = n => n*2;//se la funzione ha un parametro(ed uno solo) si può evitare anche di usare le parentesi tonde
+
+        console.log( raddoppia(2) );//4
+
+
+        let somma = (a,b) => {
+            document.write('Il valore del parametro a è pari a : ' + a + '<br>' );
+            document.write('Il valore del parametro b è pari a : ' + b + '<br>' );
+            document.write('Totale somma : ' + (a + b) + '<hr>');
+            //siccome ci sono le graffe il return non è più implicito
+        }
+        /*
+        è come scrivere questo 
+        function somma(a,b){
+            //questa funzione non restituisce nulla perché non ha un return
+            document.write('Il valore del parametro a è pari a : ' + a + '<br>' );
+            document.write('Il valore del parametro b è pari a : ' + b + '<br>' );
+            document.write('Totale somma : ' + (a + b) + '<hr>');
+        }
+        */
+
+    </script>
+</body>
+</html>
