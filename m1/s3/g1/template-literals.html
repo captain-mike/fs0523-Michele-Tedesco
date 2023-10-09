@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let nome = 'Mario';
+        let anni = 30;
+        
+        let frase = 'Ciao, mi chiamo ' + nome + ', ed ho ' + anni + ' anni.'
+
+        //backtick = `
+        let frase2 = `Ciao, mi chiamo ${nome}, ed ho ${anni} anni`;
+        console.log(frase, frase2);
+
+        /*
+        problemi con apici
+        */
+
+        let html = "<div class=\"test\">Test</div>";
+        let apostrofo = 'Che bello l\'html';
+        
+        let html2 = `<div class="test">Test</div>`;
+        let apostrofo2 = `Che bello l'html`;
+    </script>
+</body>
+</html>

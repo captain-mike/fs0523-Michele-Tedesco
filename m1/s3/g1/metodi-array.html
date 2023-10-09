@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let animali = ['gatto','cane','zebra','leone'];
+        
+        let animaliSort = animali.toSorted()
+        animali.sort()
+        
+        console.log(animali, animaliSort);
+
+        //sort di numeri
+        let numeri = [1,2,100,200];
+
+        numeri.sort((a,b) => a - b)
+
+        console.log(numeri);
+
+
+        //ordinare oggetti
+
+        let menu = [
+            {
+                gusto:'Margherita',
+                prezzo:5
+            },
+            {
+                gusto:'Diavola',
+                prezzo:1
+            },
+            {
+                gusto:'Marinara',
+                prezzo:4
+            }
+        ]
+
+        menu.sort((a,b) => a.prezzo - b.prezzo);
+
+        console.log(menu);
+    </script>
+</body>
+</html>

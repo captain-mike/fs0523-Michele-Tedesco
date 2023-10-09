@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let numeri = [1,2,3,4,5,6];
+
+        //scelgo map per effettuare modifiche ai valori dell'array, verrà generato un array nuovo, lasciando intatto quello originale;
+        
+        //let numeriX2 = numeri.map(function(n){ return n * 2 });
+        let numeriX2 = numeri.map(n => n * 2);
+
+        console.log(numeri, numeriX2);
+
+
+        let menu = [
+            {
+                gusto:'Margherita',
+                prezzo:5
+            },
+            {
+                gusto:'Diavola',
+                prezzo:1
+            }
+        ]
+
+        let menuMaggiorato = menu.map(pizza => {
+            pizza.prezzo *= 2;
+            return pizza;
+        })
+        
+        console.log(menuMaggiorato);
+        
+        let nomiPizze = menu.map(pizza => pizza.gusto)
+        console.log(nomiPizze);
+
+        /*filter*/
+        numeri = [1,2,3,4,5,6];
+        let numeriFiltrati = numeri.filter(n => n > 3 && n != 5)
+        console.log(numeriFiltrati);
+
+
+        menu = [
+            {
+                gusto:'Margherita',
+                prezzo:5,
+                disponibile:true
+            },
+            {
+                gusto:'Diavola',
+                prezzo:1,
+                disponibile:true
+            },
+            {
+                gusto:'Hawaiiana',
+                prezzo:150,
+                disponibile:false
+            }
+        ]
+
+        let pizzeDisponibili = menu.filter(p => p.disponibile)
+        console.log(pizzeDisponibili);
+        
+
+        /*find*/
+        numeri = [1,2,3,4,5,6];
+        let numeroTrovato = numeri.find(n => n > 3);
+        console.log(numeroTrovato);
+
+
+        menu = [
+            {
+                gusto:'Margherita',
+                prezzo:5,
+                disponibile:true
+            },
+            {
+                gusto:'Diavola',
+                prezzo:1,
+                disponibile:true
+            },
+            {
+                gusto:'Hawaiiana',
+                prezzo:150,
+                disponibile:false
+            }
+        ]
+
+        let diavola = menu.find(p => p.gusto == 'Diavola' );
+
+        console.log(diavola);
+
+
+        /*some ed every*/
+
+        numeri = [1,2,3,4,5,6];
+
+        if(numeri.every(n => n < 50)){
+            console.log( 'Nessun numero è uguale o superiore a 50' );
+        }
+        
+        if(numeri.some(n => n > 5 )){
+            console.log( 'almeno un numero è superiore a 5' );
+        }
+
+    </script>
+
+</body>
+</html>
