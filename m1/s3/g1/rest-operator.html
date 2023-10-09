@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //...par significa che sono concessi n valori, che verranno tutti inseriti in un array chiamato par
+
+        function somma(...numeri){
+            
+            let risultato = 0;
+
+            /* versione con for*/
+            for(let i = 0; i < numeri.length; i++){
+                risultato += numeri[i];
+            }
+            
+
+            /* versione con for of
+            for(let num of numeri){
+                risultato += num;
+            }
+            */
+
+            /*
+            numeri.forEach( num => risultato += num);
+            */
+
+            return risultato;
+        }
+
+        console.log( somma(3,5,4,5,6,7,8,98) );
+        
+
+            
+
+        function somma2(...numeri){
+            return numeri.reduce((c,p)=> c + p);
+        }
+
+    </script>
+</body>
+</html>
