@@ -20,13 +20,24 @@
 
         let accessi = {
             email:'email@esempio.it',
-            email:'email@esempio.it',
             password:'password'
         }
 
         let user = {...persona, ...accessi}
 
         console.log(user);
+
+        //spread su array
+
+
+        let arr1 = [1,2];
+        let arr2 = [3,4];
+
+        let arr3 = arr1.concat(arr2);//questo crea una concatenazione dei due array
+        console.log( arr3 );
+        
+        let arr4 = [...arr1, ...arr2];//crea una concatenazione dei due array, ma con spread operator
+        console.log( arr4 );
 
 
     </script>

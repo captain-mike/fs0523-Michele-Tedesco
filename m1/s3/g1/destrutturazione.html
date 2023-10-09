@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let menu = [
+            {
+                gusto:'Margherita',
+                prezzo:5
+            },
+            {
+                gusto:'Diavola',
+                prezzo:1
+            }
+        ]
+
+        //let margherita = menu[0];
+        //let diavola = menu[1];
+
+        //destrutturazione su array
+        let [margherita, diavola] = menu;
+
+        console.log(margherita, diavola);
+
+
+        //destrutturazione e rest operator
+        let numeri = [10,25,3,4,5,6];
+        let [n1, n2, ...altro] = numeri;
+
+        console.log(n1, n2, altro);
+
+
+        //destrutturazione su oggetto
+        let {gusto,prezzo} = margherita;
+
+        console.log(gusto, prezzo);
+
+
+
+
+    </script>
+</body>
+</html>
