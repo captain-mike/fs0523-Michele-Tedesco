@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <style>
+        #menu-off-canvas{
+            background-color: bisque;
+            height: 100vh;
+            width: 80vw;
+            position:fixed;
+            top: 0;
+            left: -80vw;
+            transition: all 0.5s
+        }
+        
+        #menu-off-canvas.open{
+            left: 0vw;
+        }
+        #toggle{
+            position: absolute;
+            right: -50px
+        }
+    </style>
 </head>
 <body>
+
+    <div id="menu-off-canvas">
+        <button id="toggle">Menu</button>
+    </div>
     
+    <script>
+        let toggle = document.querySelector('#toggle');
+
+        toggle.addEventListener('click',function(){
+            let menu = document.querySelector('#menu-off-canvas');
+            menu.classList.toggle('open')
+        })
+    </script>
 </body>
 </html>
