@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quadrato{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            margin-bottom:2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="test"><span>Contenuto</span></div>
+    <div class="quadrato"></div>
+    <div class="quadrato"></div>
+    <div class="quadrato"></div>
+    <div class="quadrato"></div>
+    <input type="text">
+
+    <script>
+
+        //selettori recenti
+        //accettano qualsiasi query di css(tranne ::before ed ::after)
+
+        //let test = document.getElementById("test");
+        let test = document.querySelector("#test");
+        console.dir(test);
+        test.innerHTML += '<b>Contenuto</b>';
+        
+        //se la ricerca effettuata comprende una serie di elementi querySelector mi restituirà il primo
+        let primoQuadrato = document.querySelector(".quadrato");
+
+        //setTimeout lancia una funzione dopo un lasso di tempo indicato in millisecondi
+        setTimeout(()=>{
+            //il quadrato diventerà verde dopo un'attesa di 1 secondo
+            primoQuadrato.style.backgroundColor = 'green';
+        },5000)
+        
+        //per la selezione multipla
+        let quadrati = document.querySelectorAll(".quadrato");
+
+        quadrati[0].style.border = '1px solid #000';
+
+        quadrati.forEach(q => q.style.backgroundColor = 'yellow')
+
+        //selezione per attributo
+        document.querySelector('[type="text"]').value = 'Prova';
+        //selezione multipla
+        let tutto = document.querySelectorAll('#test, .quadrato, input[type="text"]')
+        console.log(tutto);
+        
+
+    </script>
+</body>
+</html>
