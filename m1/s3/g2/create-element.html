@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nomeClasse{
+            background-color:red
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+    
+    <script>
+
+        document.write('<div>Prova</div>')//DA EVITARE
+        document.getElementById('test').innerHTML = '<div>Prova</div>';
+
+        const div = document.createElement('div');//genero un elemento ma non viene ancora mostrato
+        div.innerText = 'Elemento generato';//scrivo nell'elemento appena generato
+        div.classList.add('nomeClasse');//aggiungo la classe nomeClasse
+
+        console.dir(div)
+
+        let target = document.getElementById('test');
+        //faccio sì che l'elemento generato appaia nel documento
+        //target.append(div);//aggiunge in coda
+        target.prepend(div);//aggiunge in cima
+
+
+
+    </script>
+</body>
+</html>

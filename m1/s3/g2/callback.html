@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function scrivi(testo, funzione){
+            let output = funzione(testo);
+            document.write(output)
+        }
+
+        scrivi('Hello World',grassetto)
+        scrivi('Hello World',corsivo)
+        scrivi('Hello World',(t) => t + '<hr>')
+
+
+        function grassetto(txt){
+            return `<b>${txt}</b>`
+        }
+        
+        function corsivo(txt){
+            return `<i>${txt}</i>`
+        }
+
+
+    </script>
+</body>
+</html>
