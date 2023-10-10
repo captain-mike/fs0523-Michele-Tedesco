@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quadrato{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            margin-bottom:2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="test"><span>sfdsf</span></div>
+    <div class="quadrato"></div>
+    <div class="quadrato"></div>
+    <div class="quadrato"></div>
+    <div class="quadrato"></div>
+
+    <script>
+
+        //selettori classici
+
+        //document.getElementById("test").innerHTML = 'Prova'
+
+        let test = document.getElementById("test");
+        console.log(test.innerHTML);//accedo in lettura
+        test.innerHTML = '<b>Prova</b>';//scrivo un nuovo valore
+
+        //selezione per classe
+        let quadrati = document.getElementsByClassName('quadrato');//array
+        console.log(quadrati);
+        //con Array.from() puoi convertire la HTMLCollection in array
+        //quadrati[0].style.backgroundColor = 'yellow';
+        
+        for(let elemento of quadrati){
+            elemento.style.backgroundColor = 'green';
+        }
+
+        let divs = document.getElementsByTagName('div');//array
+        for(let d of divs){
+            d.style.border = '1px solid #000';
+        }
+        
+        
+
+    </script>
+</body>
+</html>
