@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <div id="tableArea"></div>
+    <script>
+
+        /* ESERCIZIO 11
+        Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
+        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
+        */
+
+        const generateTable = function () {
+
+            const tableArea = document.getElementById("tableArea");
+
+            const table = document.createElement('table');
+            const primaTr = document.createElement('tr');
+
+            const campi = ['immagine', 'nome prodotto', 'quantità', 'prezzo'];
+
+            for(let campo of campi){
+                let th = document.createElement('th')
+                th.innerText = campo;
+                primaTr.append(th)
+            }
+            table.append(primaTr)
+            
+            //fine creazione intestazioni
+            //inizio creazione corpo tabella
+
+            let dati = [
+                {
+                    immagine: 'https://picsum.photos/200/300?random=1',
+                    nomeProdotto: 'Lorem Ipsum1',
+                    quantità:10,
+                    prezzo:10
+                },
+                {
+                    immagine: 'https://picsum.photos/200/300?random=2',
+                    nomeProdotto: 'Lorem Ipsum2',
+                    quantità:1,
+                    prezzo:105
+                },
+                {
+                    immagine: 'https://picsum.photos/200/300?random=3',
+                    nomeProdotto: 'Lorem Ipsum3',
+                    quantità:180,
+                    prezzo:1
+                },
+                {
+                    immagine: 'https://picsum.photos/200/300?random=4',
+                    nomeProdotto: 'Lorem Ipsum4',
+                    quantità:80,
+                    prezzo:1056
+                },
+                {
+                    immagine: 'https://picsum.photos/200/300?random=5',
+                    nomeProdotto: 'Lorem Ipsum5',
+                    quantità:1054,
+                    prezzo:0
+                },
+            ]   
+
+            for(let prodotto of dati){
+
+                const tr = document.createElement('tr');
+
+                const tdImmagine = document.createElement('td');
+                const img = document.createElement('img');
+                img.src = prodotto.immagine;
+                tdImmagine.append(img);
+                /* versione dinamica
+                tr.append(tdImmagine);
+
+                for(let prop in prodotto){
+                    if(prop != 'immagine'){
+                        const td = document.createElement('td');
+                        td.innerText = prodotto[prop];
+                        tr.append(td)
+                    }
+                }
+                */
+
+                const tdNomeProdotto = document.createElement('td');
+                tdNomeProdotto.innerText = prodotto.nomeProdotto;
+
+                const tdQuantità = document.createElement('td');
+                tdQuantità.innerText = prodotto.quantità;
+
+                const tdPrezzo = document.createElement('td');
+                tdPrezzo.innerText = prodotto.prezzo;
+
+                tr.append(tdImmagine, tdNomeProdotto, tdQuantità, tdPrezzo);
+
+                table.append(tr)
+
+            }
+
+            tableArea.append(table);
+        }
+
+
+        generateTable()
+
+    </script>
+</body>
+</html>
