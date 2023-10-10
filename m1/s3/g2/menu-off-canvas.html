@@ -32,11 +32,12 @@
     </div>
     
     <script>
-        let toggle = document.querySelector('#toggle');
+        let toggle = document.querySelector('#toggle');//seleziono il bottone su cui attivare la funzione
 
-        toggle.addEventListener('click',function(){
-            let menu = document.querySelector('#menu-off-canvas');
-            menu.classList.toggle('open')
+        toggle.addEventListener('click',function(){//al click sul bottone
+
+            let menu = document.querySelector('#menu-off-canvas');//seleziono il menu a scomparsa
+            menu.classList.toggle('open')//se l'elemento ha la classe open la tolgo, se invece non ce l'ha gliela do. Provoco così l'effetto scomparsa/comparsa del menu
         })
     </script>
 </body>
