@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            background-color:blue;
+            color: white;
+            padding: 15px;
+            text-decoration:none;
+        }
+        .blocco{
+            margin-top: 50px;
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            display: inline-block;
+        }
+        .blocco:target{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#elemento1">elemento1</a>
+    <a href="#elemento2">elemento2</a>
+    <a href="#elemento3">elemento3</a>
+
+    <div>
+        <div id="elemento1" class="blocco"></div>
+        <div id="elemento2" class="blocco"></div>
+        <div id="elemento3" class="blocco"></div>
+    </div>
+
+    <button onclick="history.back()">indietro</button>
+    <button onclick="history.forward()">Avanti</button>
+    
+</body>
+</html>

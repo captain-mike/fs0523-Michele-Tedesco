@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="orologio"></div>
+    <div id="secondi"></div>
+
+    <script>
+
+        let orologio = document.getElementById("orologio");
+        let secondi = document.getElementById("secondi");
+        let i = 0;
+
+        setInterval(()=>{
+            let now = new Date();
+            i++
+
+            orologio.innerText = now.toLocaleTimeString() 
+            secondi.innerText = `Sono passati ${i} secondi`; 
+        },1000)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="myForm">
+
+        <input type="text" required maxlength="5" minlength="2" name="nome" placeholder="Nome">
+        <span></span>
+
+        <input type="email" required name="email" placeholder="E-Mail">
+        <span></span>
+
+        <input type="password" required name="password" placeholder="Password">
+        <span></span>
+
+        <button id="submitButton">Invia</button>
+
+    </form>    
+
+    <script>
+
+        let form = document.querySelector("#myForm");
+        let formButton = document.querySelector("#submitButton");
+
+        formButton.addEventListener("click",function(e){
+
+            e.preventDefault();//blocca l'invio del form
+
+            console.log(form.checkValidity());//controlla validità del form intero
+
+            let nome = document.querySelector('[name="nome"]');
+
+            console.log(nome.validity, nome.validationMessage);
+
+
+        })
+
+    </script>
+
+</body>
+</html>
