@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="myForm">
+
+        <input type="text" name="nome" placeholder="Nome">
+        <span></span>
+
+        <input type="email" name="email" placeholder="E-Mail">
+        <span></span>
+
+        <input type="password" name="password" placeholder="Password">
+        <span></span>
+
+        <button id="submitButton">Invia</button>
+
+    </form>    
+
+    <script>
+
+        let form = document.querySelector("#myForm");
+        let formButton = document.querySelector("#submitButton");
+
+        formButton.addEventListener("click",function(e){
+
+            e.preventDefault();//blocca l'invio del form
+            console.log(e);
+
+
+            //seleziono i campi da validare
+            let nome = form.querySelector('[name="nome"]');
+            let email = form.querySelector('[name="email"]');
+            let password = form.querySelector('[name="password"]');
+
+            let valid = true;//creo una variabile di controllo
+            
+            if(!nome.value){
+                //se il campo è vuoto la validazione si attiva: il bordo del campo diventa rosso e appare il messaggio d'errore
+                nome.style.border = "1px solid red";
+                nome.nextElementSibling.innerText = 'Compila questo campo';//scrivo l'errore dentro allo span
+
+                valid = false;//setto la variabile di controllo a false
+            }else{
+                nome.style.border = "";
+                nome.nextElementSibling.innerText = '';
+            }
+
+            if(!email.value || '^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'.test(email)){
+                //se il campo è vuoto la validazione si attiva: il bordo del campo diventa rosso e appare il messaggio d'errore
+                //il metodo test controlla se l'email inserita è una vera email
+                email.style.border = "1px solid red";
+                email.nextElementSibling.innerText = 'Compila questo campo';//scrivo l'errore dentro allo span
+
+                valid = false;//setto la variabile di controllo a false
+            }else{
+                email.style.border = "";
+                email.nextElementSibling.innerText = '';
+            }
+
+            if(!password.value){
+                //se il campo è vuoto la validazione si attiva: il bordo del campo diventa rosso e appare il messaggio d'errore
+                password.style.border = "1px solid red";
+                password.nextElementSibling.innerText = 'Compila questo campo';//scrivo l'errore dentro allo span
+
+                valid = false;//setto la variabile di controllo a false
+            }else{
+                password.style.border = "";
+                password.nextElementSibling.innerText = '';
+            }
+
+
+            //se la variabile di controllo è rimasta true allora invio il form
+            if(valid){
+                //invio il form
+                console.log('Form Inviato');
+            }
+
+        })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blocco{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="blocco"></div>
+    <div class="blocco"></div>
+    <div class="blocco"></div>
+    <div class="blocco"></div>
+    <div class="blocco"></div>
+    <div class="blocco"></div>
+    
+    <script>
+
+        let blocchi = document.querySelectorAll(".blocco");//tutti gli elementi con la classe blocco
+
+        blocchi.forEach(function(el){//el = l'elemento ciclato
+            el.addEventListener("mouseover",function(){
+                if(this.style.backgroundColor == ''){
+                    this.style.backgroundColor = 'yellow';
+                }else{
+                    this.style.backgroundColor = '';
+                }
+            })
+        })
+        
+        // for(let el of blocchi){//el = l'elemento ciclato
+        //     el.addEventListener("click",function(){
+        //         if(el.style.backgroundColor == ''){
+        //             el.style.backgroundColor = 'yellow';
+        //         }else{
+        //             el.style.backgroundColor = '';
+        //         }
+        //     })
+        // }
+
+    </script>
+</body>
+</html>

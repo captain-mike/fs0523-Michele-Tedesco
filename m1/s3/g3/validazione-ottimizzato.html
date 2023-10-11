@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="myForm">
+
+        <input type="text" name="nome" placeholder="Nome">
+        <span></span>
+
+        <input type="email" class="notEmpty" name="email" placeholder="E-Mail">
+        <span></span>
+
+        <input type="password" class="notEmpty" name="password" placeholder="Password">
+        <span></span>
+        
+        <button id="submitButton">Invia</button>
+
+    </form>    
+
+    <script>
+
+        let form = document.querySelector("#myForm");
+        let formButton = document.querySelector("#submitButton");
+
+        formButton.addEventListener("click",function(e){
+
+            e.preventDefault();//blocca l'invio del form
+            console.log(e);
+
+            let campi = document.querySelectorAll('.notEmpty');
+            let [email, password] = campi;
+
+            let valid = true;
+
+            for(let campo of campi){
+                if(!campo.value){
+                    campo.style.border = "1px solid red";
+                    campo.nextElementSibling.innerText = 'Compila questo campo';
+                   valid = false;
+                }else{
+                    campo.style.border = "";
+                    campo.nextElementSibling.innerText = '';
+                }
+            }
+            
+            if( !('^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'.test(email)) ){
+                valid = false;
+            }
+
+
+            if(valid){
+                //invio il form
+                console.log('Form Inviato');
+            }
+
+        })
+
+    </script>
+
+</body>
+</html>
