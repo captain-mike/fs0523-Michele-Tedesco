@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="EpiCalendar" class="EpiCalendar">
+
+        <h3 class="month-name">Mese</h3>
+        <div class="days">
+        </div>
+
+        <div class="add-meeting">
+            <h4 class="meeting-section-title">Add Meeting</h4>
+            <div class="new-meeting-wrap">
+                <div class="col">
+                    <h5 class="new-meeting-title">Meeting Day</h5>
+                    <label class="meeting-date-label">Click on a day</label>
+                    <input type="date" class="meeting-date-input hidden">
+                </div>
+                <div class="col">
+                    <h5 class="new-meeting-title">Meeting Time</h5>
+                    <input type="time" class="meeting-time-input">
+                </div>
+                <div class="col">
+                    <h5 class="new-meeting-title">Meeting Name</h5>
+                    <input type="text" class="meeting-name-input" placeholder="Insert a name for the meeting">
+                </div>
+                <div class="col">
+                    <h5 class="new-meeting-title">Add</h5>
+                    <button class="save-meeting calendar-button">Save Meeting</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

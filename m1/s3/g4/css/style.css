@@ -1,0 +1,107 @@
+:root{
+    --main-color:#131334;
+    --main-dark-color:#0C0B1D;
+    --secondary-color:#7a408a;
+}
+/****************************************************************
+* Tipografia o stili generici 
+*/
+.month-name{
+    font-size: 3em;
+}
+.day{
+    font-size: 1.3em;
+}
+.meeting-section-title{
+    font-size: 1.8em;
+}
+.month-name, .meeting-section-title, .new-meeting-title{
+    font-weight: bold;
+}
+.new-meeting-title{
+    font-size: 1em;
+}
+
+.EpiCalendar input{
+    background-color: var(--main-dark-color);
+    border: none;
+    padding: 7px;
+    border-radius:5px;
+    color: #fff;
+}
+
+.calendar-button{
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 8px 10px;
+    color: #fff;
+    border-radius:3px;
+
+}
+
+/****************************************************************
+* box 
+*/
+.EpiCalendar{
+    width: 500px;
+    width: 500px;
+    background-color: var(--main-color);
+    padding: 5px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+.month-name{
+    text-transform: capitalize;/*rende maiuscola la prima lettera di ogni parola*/
+}
+
+/****************************************************************
+* giorni
+*/
+.days{
+    background-color: var(--main-dark-color);
+    display: flex;/*attivo flex sul contenitore*/
+    flex-wrap: wrap;/*faccio si che i blocchi dentro al contenitore vadano su più righe*/
+}
+.day{
+    flex: 0 1 calc(100% / 7);/*imposto una larghezza pari al 100% dello spazio disponibile in orizzontale diviso 7, così da avere 7 colonne*/
+    text-align: center;
+    padding: 25px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+.day:hover{
+    background-color: var(--main-color)
+}
+.day.today{
+    color: var(--secondary-color);
+}
+
+/****************************************************************
+* forms 
+*/
+.add-meeting{
+    margin-top:25px;
+    margin-bottom:10px;
+}
+.meeting-section-title{
+    margin-bottom: 30px;
+}
+
+.new-meeting-wrap{
+    display: flex;
+}
+
+.col{
+    flex: 1 1 25%;
+    box-sizing: border-box;
+}
+
+.new-meeting-title{
+    height: 40px;
+}
+
+.meeting-date-input.hidden{
+    /* display: none; */
+}
