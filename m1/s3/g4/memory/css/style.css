@@ -1,0 +1,19 @@
+#memory{
+    width:500px;
+    background-color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    flex: 1 1 calc(25% - 30px);
+    text-align: center;
+    font-size:4.5rem;
+    padding:15px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+}
+
+.card.hidden .icon{
+    visibility: hidden;
+}
