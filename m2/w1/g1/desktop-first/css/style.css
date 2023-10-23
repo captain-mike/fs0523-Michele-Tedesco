@@ -1,0 +1,56 @@
+/* LA MODALITà DESKTOP FIRST VA EVITATA!! */
+.bg{
+    background-color: cadetblue;
+    text-align: center;
+}
+.container{
+    width:1170px;
+    margin: 0 auto;
+}
+.articolo{
+    background-color: red;
+    width: calc(100% / 3 - 0.4rem);
+    height: 100px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 1170px){
+
+    .container{
+        width:911px;
+    }
+    .articolo{
+        background-color: yellow;
+    }
+    
+}
+
+@media screen and (max-width: 911px){
+
+    .container{
+        width:100%;
+    }
+    .articolo{
+        background-color: green;
+    }
+    
+}
+
+@media screen and (max-width: 768px){
+
+    .articolo{
+        background-color: purple;
+        width: calc(100% / 2 - 0.4rem);
+    }
+    
+}
+
+@media screen and (max-width: 560px){
+
+    .articolo{
+        background-color:blue;
+        width: 100%;
+    }
+    
+}
