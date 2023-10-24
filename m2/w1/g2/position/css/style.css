@@ -1,0 +1,57 @@
+/* absolute */
+.area{
+    width: 500px;
+    height: 500px;
+    background-color: aquamarine;
+    margin: 100px auto;
+    position: relative;
+}
+.quadrato{
+    width: 100px;
+    height: 100px;
+    background-color:#ccc;
+    text-align: center;
+    border:1px solid #000;
+    position: absolute;
+}
+
+.quadrato:nth-of-type(1){
+    top: -15px;
+    left: 15px;
+}
+.quadrato:nth-of-type(2){
+    top: 15px;
+    right: 15px;
+}
+
+.quadrato:nth-of-type(3){
+    left: 15px;
+    bottom: 15px;
+}
+
+.quadrato:nth-of-type(4){
+    right: 15px;
+    bottom: 15px;
+}
+/*
+relative
+*/
+
+.area.static{
+    position: static;
+    padding: 10px;
+}
+.rettangolo{
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 10px;
+    margin: 10px 0;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.rettangolo:nth-of-type(2){
+    position: relative;
+    top: 20px;
+    right: -10px;
+}
