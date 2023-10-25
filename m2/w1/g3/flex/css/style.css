@@ -1,0 +1,42 @@
+h2{
+    font-size:2rem
+}
+.container{
+    background-color: blueviolet;
+    display: flex;
+    margin-bottom: 30px;
+    column-gap: 30px;/*spaziatura tra righe*/
+    row-gap: 30px;/*spaziatura tra colonne*/
+}
+.col{
+    height: 100px;
+    background-color: orange;
+    text-align: center;
+    font-size:4rem;
+    color: #fff;
+    width: 25%;
+}
+
+
+#c2{
+    flex-direction: row-reverse;
+}
+
+#c3{
+    flex-direction: column;
+}
+
+#c4{
+    flex-direction: column-reverse;
+}
+
+#c5{
+    flex-wrap: wrap;/*se non c'è spazio, manda a capo*/
+}
+
+#c6{
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 500px;
+}
+
