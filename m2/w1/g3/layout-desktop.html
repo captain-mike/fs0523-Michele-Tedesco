@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="flex/css/reset.css">
+    <style>
+        header, footer{
+            height: 70px;
+            background-color: aqua;
+            display: flex;
+        }
+
+        header > *{
+           flex-basis: 50%;
+        }
+
+        #menu{
+            display: flex;
+
+        }
+
+        .wrap{
+            display: flex;
+        }
+        main{
+            flex-basis: 70%;
+            height: 80vh;
+            background-color:bisque
+        }
+        aside{
+            flex-grow: 1;
+            height: 80vh;
+            background-color: chocolate;
+        }
+
+        @media screen and (max-width:768px) {
+            .wrap{
+                display: flex;
+                flex-direction: column;
+            }    
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div>
+            logo
+        </div>
+        <nav>
+            <ul id="menu">
+                <li><a href="">link</a></li>
+                <li><a href="">link</a></li>
+                <li><a href="">link</a></li>
+                <li><a href="">link</a></li>
+                <li><a href="">link</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrap">
+        <main></main>
+        <aside></aside>
+    </div>
+
+    <footer></footer>
+</body>
+</html>

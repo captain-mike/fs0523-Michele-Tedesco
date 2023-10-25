@@ -5,6 +5,11 @@ h2{
     background-color: blueviolet;
     display: flex;
     margin-bottom: 30px;
+}
+.container.alto{
+    height:250px
+}
+.gap{
     column-gap: 30px;/*spaziatura tra righe*/
     row-gap: 30px;/*spaziatura tra colonne*/
 }
@@ -15,6 +20,7 @@ h2{
     font-size:4rem;
     color: #fff;
     width: 25%;
+    border: 1px solid red;
 }
 
 
@@ -37,6 +43,148 @@ h2{
 #c6{
     flex-wrap: wrap;
     flex-direction: column;
-    height: 500px;
+    height: 400px;
 }
+
+#c7{
+    flex-wrap: wrap-reverse;/*se non c'è spazio, manda a capo*/
+}
+
+#c8{
+    justify-content: flex-end;
+    /*
+    posiziona tutto lo spazio libero sulla sinistra, spingendo gli elementi a destra
+    */
+}
+
+#c9{
+    justify-content: center;/*mette tutti gli elementi al centro(orizzontalmente)*/
+}
+
+#c10{
+    justify-content: space-between;
+    /*
+    spazio rimosso dai lati e posizionato solo tra gli elementi
+    */
+}
+
+#c11{
+    justify-content: space-around;
+    /*
+    fa si che attorno ad ogni elemento vi sia lo stesso spazio.
+    Ogni elemento ha il suo spazio, che si somma con quello degli altri elementi
+    */
+}
+
+#c12{
+    justify-content: space-evenly;
+    /*
+    ripartisce in maniera equa gli spazi.
+    Lo spazio che distanzia gli elementi è in comune tra loro
+    */
+}
+
+
+#c13{
+    align-items: flex-end;
+}
+
+#c14{
+    align-items: center;
+}
+
+#c15{
+    align-items: stretch;
+}
+#c15 .col{
+    height: auto;
+}
+
+#c16{
+    align-items: baseline;
+}
+#c16 .col{
+    font-size: 1rem;
+    height: auto;
+}
+
+#c17{
+    flex-wrap: wrap;
+    align-content: flex-end;
+    /*
+    le righe vengono unite, e lo spazio restante(se disponibile) viene spostato in alto
+    */
+}
+
+#c18{
+    flex-wrap: wrap;
+    align-content: center;
+    /*
+    le righe vengono unite, e lo spazio restante(se disponibile) viene spostato equamente sopra e sotto
+    */
+}
+
+#c19{
+    flex-wrap: wrap;
+    align-content: stretch;
+    /*
+    le righe vengono unite, e lo spazio restante(se disponibile) viene spostato equamente sopra e sotto
+    */
+}
+#c19 .col{
+    height: auto;
+    /*
+    Lo spazio viene annullato poiché gli elementi sono allungati fino a coprire fin quanto possibile tutta l'area del genitore
+    */
+}
+
+#c20{
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+
+#c21{
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+#c21 .col{
+    height: auto;
+    width: auto;
+}
+
+#c21 .col{
+    flex-grow: 1;
+    /*
+    tutte le colonne cercano di estendersi il più possibile
+    avendo priorità pari ad 1, cioè otterranno tutte una parte dello spazio disponibile in orizzontale
+    */
+}
+
+#c21 .col:nth-of-type(1){
+    flex-grow: 3;
+    /*questo elemento prenderà 3 parti, e sarà più ampio degli altri*/
+}
+
+#c21 .col:nth-of-type(2){
+    flex-shrink: 2;
+    /*questo elemento prenderà 3 parti, e sarà più ampio degli altri*/
+}
+
+#c21 .col:nth-of-type(3),
+#c21 .col:nth-of-type(4){
+    width: 100px;
+    /*questo elemento prenderà 3 parti, e sarà più ampio degli altri*/
+}
+
+
+#c22 .col{
+    flex-grow: 1;
+}
+
+#c22 .col:nth-of-type(1){
+    flex-basis: 50%;
+}
+
+
 
