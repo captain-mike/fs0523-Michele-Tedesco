@@ -12,7 +12,8 @@
             display: flex;
         }
 
-        header > *{
+        header > div,
+        header > header{
            flex-basis: 50%;
         }
 
@@ -27,19 +28,13 @@
         main{
             flex-basis: 70%;
             height: 80vh;
-            background-color:bisque
+            background-color:bisque;
         }
         aside{
             flex-grow: 1;
             height: 80vh;
             background-color: chocolate;
-        }
-
-        @media screen and (max-width:768px) {
-            .wrap{
-                display: flex;
-                flex-direction: column;
-            }    
+            order: -100;
         }
 
     </style>
