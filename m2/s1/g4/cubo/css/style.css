@@ -1,14 +1,14 @@
 .area3d{
-    
+    transform-style: preserve-3d;
     perspective: 400px;
     height: 100vh;
-    background-color: aquamarine;
 }
 #cubo{
-    perspective: 400px;
+    transform-style: preserve-3d;
+    perspective: 5600px;
     position: relative;
-    left: 100px;
-    top: 100px;
+    left: 0px;
+    top: 600px;
     width: 200px;
     height: 200px;
     transform: translateZ(-500px);
@@ -16,23 +16,29 @@
 .faccia{
     width: 200px;
     height: 200px;
-    background-color: red;
-    border: 1px solid #000;
+    background-image: linear-gradient(to top, red, black);
+    border: 3px solid #000;
     position: absolute;
+    background-size: cover;
+}
+.retro{
+    background-image: url(https://picsum.photos/id/237/1200/1000);
+    background-size: cover;
 }
 .top{
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+.bottom{
+    background-image: url(https://picsum.photos/id/237/1200/1000);
     transform: rotateX(-90deg);
     transform-origin: bottom;
 }
-.bottom{
-    transform: rotateX(90deg);
-    transform-origin: top;
-}
 .sx{
-    transform: rotateY(90deg);
-    transform-origin: right;
-}
-.dx{
     transform: rotateY(-90deg);
     transform-origin: left;
+}
+.dx{
+    transform: rotateY(90deg);
+    transform-origin: right;
 }
