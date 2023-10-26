@@ -1,0 +1,38 @@
+.area3d{
+    
+    perspective: 400px;
+    height: 100vh;
+    background-color: aquamarine;
+}
+#cubo{
+    perspective: 400px;
+    position: relative;
+    left: 100px;
+    top: 100px;
+    width: 200px;
+    height: 200px;
+    transform: translateZ(-500px);
+}
+.faccia{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border: 1px solid #000;
+    position: absolute;
+}
+.top{
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+}
+.bottom{
+    transform: rotateX(90deg);
+    transform-origin: top;
+}
+.sx{
+    transform: rotateY(90deg);
+    transform-origin: right;
+}
+.dx{
+    transform: rotateY(-90deg);
+    transform-origin: left;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .black-area{
+            background-color: black;
+            height: 80vh;
+            position: relative;
+        }
+        .parallax{
+            height: 30vh;
+            background-image: url(https://picsum.photos/id/237/1200/1000);
+            background-size: cover;
+        }
+
+        .cerchio{
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            position:absolute;
+            border-radius: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="black-area">
+        <div class="cerchio"></div>
+    </div>
+    <div class="parallax"></div>
+    <div class="black-area"></div>
+    
+    <script>
+
+        window.addEventListener("scroll",function(){
+            let top = window.scrollY;
+            let parallax = document.querySelector('.parallax');
+            
+            parallax.style.backgroundPosition = `center ${-( top * 0.3)}px` 
+            
+            let cerchio = document.querySelector('.cerchio');
+            cerchio.style.left = top + 'px';
+        })
+
+    </script>
+</body>
+</html>
