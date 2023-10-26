@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quadrato{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        .muovi{
+            animation-name: muovi;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes muovi{
+            0% {left: 0;}
+            50% {left: 100%}
+            100% {left: 0}
+        }
+
+        #q2{
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button id="start1">Avvia</button>
+    
+    <div id="q1" class="quadrato"></div>
+
+    <button id="start2">Avvia/ferma</button>
+    <div id="q2" class="quadrato muovi"></div>
+
+    <script>
+
+        let start1 = document.querySelector('#start1');
+        
+        start1.addEventListener('click',function(){
+            
+            let quadrato = document.querySelector('#q1');
+            
+            quadrato.classList.add('muovi')
+            
+        })
+        
+        let start2 = document.querySelector('#start2');
+        start2.addEventListener('click',function(){
+            
+            let quadrato = document.querySelector('#q2');
+            
+            if(!quadrato.style.animationPlayState){
+                quadrato.style.animationPlayState = 'paused'
+            }else{
+                quadrato.style.animationPlayState = '';
+            }
+            
+        })
+    </script>
+</body>
+</html>

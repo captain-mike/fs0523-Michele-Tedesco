@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quadrato{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="start1">Avvia</button>
+    
+    <div id="q1" class="quadrato"></div>
+
+    <script>
+
+        let start1 = document.querySelector('#start1');
+        let timer;
+        let x = 0;
+
+        start1.addEventListener('click',function(){
+            let q1 = document.querySelector('#q1');
+
+            timer = setInterval(()=>{
+
+                q1.style.left = x + 'px'
+                if(x < window.innerWidth){
+                    x += 2;
+                }else{
+                    x = 0;
+                    clearInterval(timer)
+                }
+                
+            }, 20)
+        })
+        
+    </script>
+</body>
+</html>

@@ -37,9 +37,11 @@
     line-height: 35px;
     display: block;
     width: 80px;
+    transition: transform 1s, background-color 2s;
 }
 .bottone:hover{
     transform: scale(1.5);
+    background-color:orange;
 }
 
 
