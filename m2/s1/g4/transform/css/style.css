@@ -1,0 +1,73 @@
+.area-3d{
+    perspective: 400px;
+    border: 1px solid #000;
+    height: 100vh;
+    position: relative;
+}
+.quadrato{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+}
+
+#q1{
+    left: 150px;
+    top: 100px;
+    transform: rotateX(89deg);
+}
+
+#q2{
+    left: 450px;
+    top: 100px;
+    transform: rotateX(0deg) translateZ(-606px);
+}
+#q3{
+    left: 450px;
+    top: 100px;
+    transform: rotateX(0deg) translateZ(0px);
+}
+
+.header{
+    background-color:blue
+}
+.bottone{
+    background-color:yellow;
+    padding: 20px;
+    line-height: 35px;
+    display: block;
+    width: 80px;
+}
+.bottone:hover{
+    transform: scale(1.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#x{
+    width: 100vw;
+    border-top: 1px solid green;
+    position: absolute;
+    top: 50vh;
+}
+#y{
+    height: 100vh;
+    border-left: 1px solid green;
+    position: absolute;
+    left: 50vw;
+}
+

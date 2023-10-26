@@ -1,0 +1,59 @@
+.area-3d{
+    perspective: 400px;
+    border: 1px solid #000;
+    height: 100vh;
+    position: relative;
+}
+.quadrato{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+}
+
+#q1{
+    left: 150px;
+    top: 100px;
+    animation-name: rotea;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-timing-function: linear;
+}
+
+@keyframes rotea{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#x{
+    width: 100vw;
+    border-top: 1px solid green;
+    position: absolute;
+    top: 50vh;
+}
+#y{
+    height: 100vh;
+    border-left: 1px solid green;
+    position: absolute;
+    left: 50vw;
+}
+
