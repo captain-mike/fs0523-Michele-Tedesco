@@ -1,6 +1,13 @@
+:root{
+    --bs-primary-rgb: 255, 0, 0;
+}
+
 .row > div{
     height: 50px;
     background-color:grey;
     border: 1px solid #000;
-    color: #fff;
+}
+
+.col-8.bold-col{
+    font-weight: bold;
 }
