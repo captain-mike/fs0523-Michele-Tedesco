@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio attributi personalizzati</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+   <button data-target="#collapsed1" class="toggleCollapse">Area 1</button>
+   <button data-target="#collapsed1" class="toggleCollapse">Area 1</button>
+   <button data-target="#collapsed2" class="toggleCollapse">Area 2</button>
+
+    <p id="collapsed1" class="collapse show">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam fugit, nostrum reprehenderit corrupti ad, eligendi ut obcaecati, consectetur quae officiis laboriosam eius. Deserunt itaque distinctio obcaecati quisquam voluptatibus impedit optio?
+    </p>
+
+    <p id="collapsed2" class="collapse show">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam fugit, nostrum reprehenderit corrupti ad, eligendi ut obcaecati, consectetur quae officiis laboriosam eius. Deserunt itaque distinctio obcaecati quisquam voluptatibus impedit optio?
+    </p>
+
+    <script>
+
+        let bottoniCollapse = document.querySelectorAll('.toggleCollapse');
+
+        bottoniCollapse.forEach(bottone => {
+            bottone.addEventListener('click',function(){
+
+                let targetAttribute = bottone.getAttribute('data-target');
+                let target = document.querySelector(`${targetAttribute}`);
+
+                target.classList.toggle('show')
+
+            })
+        })
+       
+       
+    </script>
+
+</body>
+</html>

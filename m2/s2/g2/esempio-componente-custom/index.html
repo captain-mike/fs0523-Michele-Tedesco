@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio attributi personalizzati</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div data-colore="red" class="blocco">Rosso</div>
+    <div data-colore="yellow" class="blocco">Giallo</div>
+    <div data-colore="green" class="blocco">Verde</div>
+    <div data-colore="pink" class="blocco">Rosa</div>
+    <div data-colore="purple" class="blocco">Viola</div>
+
+    <script>
+
+        document.querySelectorAll('.blocco').forEach(elemento =>{
+            elemento.addEventListener('click',function(){
+                let colore = elemento.getAttribute('data-colore');
+                elemento.style.backgroundColor = colore
+            })
+        })
+       
+    </script>
+
+</body>
+</html>

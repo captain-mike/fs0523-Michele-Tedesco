@@ -1,0 +1,13 @@
+.blocco{
+    width: 100px;
+    height: 100px;
+}
+
+.collapse{
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+.collapse.show{
+    height: auto;
+}

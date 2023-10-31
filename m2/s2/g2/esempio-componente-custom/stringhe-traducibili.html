@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button data-testo1="Mostra" data-testo2="Nascondi">Mostra</button>
+
+    <script>
+
+        let bottone = document.querySelector('button');
+
+        bottone.addEventListener('click',()=>{
+            if(bottone.classList.contains('clicked')){
+                bottone.innerText = bottone.getAttribute('data-testo1');
+            }else{
+                bottone.innerText = bottone.getAttribute('data-testo2');  
+            }
+            bottone.classList.toggle('clicked')
+        })
+
+    </script>
+
+</body>
+</html>
