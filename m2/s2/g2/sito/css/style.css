@@ -1,0 +1,15 @@
+.navbar.bg-dark a{
+    color: #fff;
+}
+.nav-pills {
+    --bs-nav-pills-link-active-bg: red;
+}
+
+.carousel-custom .carousel-item{
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+}
+.carousel-custom .carousel-item img{
+    visibility: hidden;
+}
