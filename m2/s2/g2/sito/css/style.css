@@ -1,3 +1,7 @@
+:root{
+    --bs-secondary-rgb: 131, 28, 0;
+}
+
 .navbar.bg-dark a{
     color: #fff;
 }
