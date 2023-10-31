@@ -5,6 +5,10 @@
     --bs-nav-pills-link-active-bg: red;
 }
 
+.logo{
+    width: 100px;
+}
+
 .carousel-custom .carousel-item{
     height: 400px;
     background-position: center;
