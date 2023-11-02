@@ -1,0 +1,62 @@
+@import 'variabili';
+@import 'mixins';
+
+h1{
+    color: $colore;
+    font-size: nth($sizes, 1);//nth(quale lista, quale valore)
+}
+h2{
+    color: map-get($color-map, primary);
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    @media screen and (min-width: 480px) {
+        background-color: black;
+    }
+    li{
+        margin: 0 5px;
+        a{
+            display: block;
+            background-color: $colore;
+            padding: 5px;
+            color: #fff;
+            text-decoration: none;
+            &:hover{
+                background-color: darken($colore,10);
+            }
+        }
+    }
+}
+
+h3{
+    @include coloriEFont;
+}
+
+.scuro{
+    @include coloreDinamico('dark', red)
+}
+
+.chiaro{
+    @include coloreDinamico('light', red)
+}
+
+$misure: 15, 30, 45;
+
+@each $m in $misure{
+    .mt-#{$m}{
+        margin-top: $m + px;
+    }
+    .mb-#{$m}{
+        margin-bottom: $m + px;
+    }
+    .mr-#{$m}{
+        margin-right: $m + px;
+    }
+    .ml-#{$m}{
+        margin-left: $m + px;
+    }
+}
+

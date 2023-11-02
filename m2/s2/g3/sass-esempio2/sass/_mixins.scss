@@ -1,0 +1,12 @@
+@mixin coloriEFont{
+    color: purple;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@mixin coloreDinamico($tema : 'dark', $colore){
+    @if($tema == 'dark'){
+        background-color: darken($colore, 10);
+    }@else{
+        background-color: lighten($colore, 10);
+    }
+}

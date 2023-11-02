@@ -1,0 +1,9 @@
+$colore: rgb(110, 38, 38);
+
+$sizes: 12px, 30px;//nth()
+
+$color-map: (
+  primary: blue,
+  secondary: green,
+  accent: yellow,
+); //map-get()
