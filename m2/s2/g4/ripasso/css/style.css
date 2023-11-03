@@ -1,0 +1,128 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1 {
+  color: rgb(158, 54, 54);
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 160px;
+}
+h2 span {
+  color: rgb(158, 54, 54);
+}
+h2 span:hover {
+  text-decoration: line-through;
+}
+
+.testo-paragrafo {
+  color: blue;
+}
+@media screen and (min-width: 768px) {
+  .testo {
+    font-size: 2rem;
+  }
+}
+
+.bg {
+  background-image: url(../img/pizza-scaled.jpg);
+  width: 100px;
+  height: 100px;
+}
+
+.bg-big {
+  background-image: url(../img/pizza-scaled.jpg);
+  width: 250px;
+  height: 250px;
+}
+
+.section1, .section2 {
+  height: 400px;
+}
+
+.section1 {
+  background-color: rgb(80, 0, 0);
+  width: 50%;
+}
+.section1 p {
+  color: #ff5050;
+}
+
+.section2 {
+  background-color: rgb(255, 133, 133);
+}
+.section2 p {
+  color: #b80000;
+}
+@media screen and (min-width: 1200px) {
+  .section2 {
+    font-size: 2rem;
+  }
+}
+
+.spazi, .spazi-rosso, .spazi-rosso-testo-bianco {
+  padding: 50px 30px;
+  padding-bottom: 80px;
+  background-color: blue;
+}
+
+.spazi-rosso, .spazi-rosso-testo-bianco {
+  border-top: 5px solid green;
+  background-color: red;
+}
+
+.spazi-rosso-testo-bianco {
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */

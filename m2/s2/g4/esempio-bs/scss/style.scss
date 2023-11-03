@@ -1,0 +1,5 @@
+@import '../node_modules/bootstrap/scss/functions';//importo le funzioni(mixin e functions di bootstrap)
+
+@import 'variables';//importo il backup del foglio variabili di bootstrap modificato da me
+
+@import '../node_modules/bootstrap/scss/bootstrap';//alla fine importo bs

@@ -1,0 +1,85 @@
+@import 'reset';
+@import 'variabili';
+@import 'mixin';
+@import 'functions';
+
+h1{
+    color: $nomeVariabile;
+    font-size: nth($dimensioni-fonts, 3);
+    //per prendere un solo valore da una lista uso nth() indicando l'indice del valore che voglio recuperare
+}
+
+h2{
+    font-size: map-get($sizes,xxl);
+    span{
+        color: $nomeVariabile;
+        &:hover{
+            text-decoration:line-through;
+        }
+    }
+}
+
+.testo{
+    &-paragrafo{
+        color: blue;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 2rem;
+        
+    }
+
+}
+
+.bg{
+    background-image: url(../img/pizza-scaled.jpg);
+    @include quadrato();//100px è il valore di default
+}
+.bg-big{
+    background-image: url(../img/pizza-scaled.jpg);
+    @include quadrato(250px);
+}
+
+$colori : (
+    dark:rgb(80, 0, 0),
+    light:rgb(255, 133, 133)
+);
+
+.section1, .section2{
+    height: 400px;
+}
+.section1{
+    background-color: map-get($colori, dark);
+    width: calc(100% / 2);//per le operazioni matematiche bisogna usare calc()
+    p{
+        color: contrast( map-get($colori, dark), 50% );
+    }
+}
+.section2{
+    background-color: map-get($colori, light);
+    p{
+        color: contrast(map-get($colori, light), 40%);
+    }
+    @include breakpoint(laptop){
+        font-size:2rem
+    }
+}
+
+.spazi{
+    padding: 50px 30px;
+    padding-bottom: 80px;
+    background-color: blue;
+}
+
+.spazi-rosso{
+    @extend .spazi;
+    border-top: 5px solid green;
+    background-color: red;
+}
+
+.spazi-rosso-testo-bianco{
+    @extend .spazi-rosso;
+    color: #fff;
+}
+
+
