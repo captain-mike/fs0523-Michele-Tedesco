@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        {
+
+
+            let obj = {};//oggetto vuoto
+
+            let pizza = {
+                gusto : 'Margherita',
+                prezzo : 5,
+                mostraDettagliPizza : function(){
+                    console.log(`La pizza ${this.gusto} costa ${this.prezzo}€`);
+                }
+            }
+            pizza.mostraDettagliPizza();
+            
+            let pizza2 = {
+                gusto : 'Capricciosa',
+                prezzo : 7,
+                mostraDettagliPizza : function(){
+                    console.log(`La pizza ${this.gusto} costa ${this.prezzo}€`);
+                }
+            }
+            pizza2.mostraDettagliPizza();
+            
+            console.log(pizza);
+            
+            //la funzione mostraDettagliPizza è una funzione globale e non ha nulla a che vedere con il metodo mostradettagli pizza
+            // function mostraDettagliPizza(){
+            //     console.log(`La pizza ${pizza.gusto} costa ${pizza.prezzo}€`);
+            // }
+
+            // mostraDettagliPizza();
+
+
+            //lettura
+            console.log( pizza.gusto );//questa va preferita, tutte le volte che si può
+            console.log( pizza['gusto'] );//quando la prop ha un nome che romperebbe la sintassi di js, oppure quando non siamo certi che la prop richiamata esista
+
+            //scrittura
+            pizza.gusto = 'Diavola';
+
+            console.log(pizza);
+
+        }
+
+        {
+
+            // let pizza = {
+            //     gusto : 'Margherita',
+            //     prezzo : 5,
+            //     mostraDettagliPizza : function(){
+            //         console.log(`La pizza ${this.gusto} costa ${this.prezzo}€`);
+            //     }
+            // }
+            //costruttore
+            function Pizza(g,p){
+                this.gusto = g;
+                this.prezzo = p;
+                this.mostraDettagliPizza = function(){
+                    console.log(`La pizza ${this.gusto} costa ${this.prezzo}€`);
+                }
+            }
+
+            let capricciosa = new Pizza('Capricciosa',7);
+            let boscaiola = new Pizza('Boscaiola',7.5);
+
+            console.table([capricciosa,boscaiola]);
+
+            capricciosa.mostraDettagliPizza();
+            boscaiola.mostraDettagliPizza();
+
+        }
+
+        console.log('%c Classi:','background-color:red');
+        {
+
+            class Pizza{
+                
+                constructor(g, p, arrIngredienti = []){
+                    this.gusto = g;
+                    this.prezzo = p;
+                    this.ingredienti = arrIngredienti;
+                    this.mostraDettagliPizza();
+                }
+
+                mostraDettagliPizza(){
+                    console.log(`La pizza ${this.gusto} costa ${this.prezzo}€`);
+                }
+
+            }
+
+            let margherita = new Pizza('Margherita',5);
+
+            let ingrDiavola = ['Pomodoro','Mozzarella','Salame Piccante'];
+            let diavola = new Pizza('Diavola',1,ingrDiavola);
+
+
+            console.table([margherita,diavola]);
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class Persona{
+            constructor(n,c,a){  
+                this.nome = n;
+                this.cognome = c;
+                this.anni = a;
+            }
+            presentazione(){
+                return `Ciao, mi chiamo ${this.nome} ${this.cognome} ed ho ${this.anni} anni`;
+            }
+        }
+
+        let personaGenerica = new Persona('Mario','Rossi',30);
+        
+        console.log(personaGenerica.presentazione());
+        
+        
+        class Studente extends Persona{
+
+            constructor(nome,cognome,anni,m = []){
+                super(nome,cognome,anni);//un richiamo al costruttore della classe Persona
+                this.materie = m;
+            }
+
+            presentazione(){
+                return super.presentazione() + ` e studio ${this.materie}`;
+            }
+
+        }
+        
+        let studente = new Studente('Maria','Rossi',20,['js','css','html']);
+        console.log(studente.presentazione());
+
+
+    </script>
+
+</body>
+</html>
