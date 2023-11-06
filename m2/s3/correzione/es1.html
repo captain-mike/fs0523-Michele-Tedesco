@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class User{
+            constructor(firstName, lastName, age, location){
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+                this.location = location;
+            }
+
+            compareAge(userBg){
+                if(this.age < userBg.age){
+                    return `${userBg.firstName} è più vecchio di ${this.firstName}`;
+                }else if(this.age > userBg.age){
+                    return `${userBg.firstName} è più giovane di ${this.firstName}`;
+                }else{
+                    return `${userBg.firstName} e ${this.firstName} hanno la stessa età`;
+                }
+            }
+            
+        }
+
+        let utente1 = new User('Micol','Lombardi',23, 'Roma');
+        let utente2 = new User('Marco','Ziino',27, 'Sicilia');
+        let utente3 = new User('Mario','Rossi',27,'Campania');
+
+        console.log( utente1.compareAge(utente2) );
+        console.log( utente2.compareAge(utente1) );
+        console.log( utente2.compareAge(utente3) );
+
+        
+        class Sezione{
+
+            constructor(sectionName){
+                this.sectionName = sectionName;
+                this.users = [];
+            }
+
+            addNewStudent(student){
+                this.users.push(student);
+            }
+
+            confrontAllUsers() {
+                for (let i = 0; i < this.users.length; i++) {
+                    for (let j = 0; j < this.users.length; j++) {
+                        if (i !== j) {
+                            const comparisonResult = this.users[i].compareAge(this.users[j]);
+                            console.log(comparisonResult);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        let classe = new Sezione('FS0523B');
+        classe.addNewStudent(utente1);
+        classe.addNewStudent(utente2);
+        classe.addNewStudent(utente3);
+
+        classe.confrontAllUsers();
+
+
+    </script>
+</body>
+</html>
