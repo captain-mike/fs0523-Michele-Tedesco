@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list-item{
+            padding: 10px;
+            background-color:indianred;
+            border: 1px solid #970000;
+            color: white;
+        }
+        #target-done .list-item{
+            background-color:rgb(109, 204, 119);
+            border: 1px solid rgb(36, 64, 39);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="text" id="testo">
+    <button id="salva">Salva</button>
+    <ol id="target"></ol>
+    <ol id="target-done"></ol>
+
+    <script>
+
+        let bottoneSalva = document.getElementById("salva");
+        
+        bottoneSalva.addEventListener("click",function(){
+            
+            let target = document.getElementById('target');
+            let targetDone = document.getElementById('target-done');
+            let input = document.getElementById('testo');
+
+            if(!input.value) return;//se il campo è vuoto uso return per terminare la funzione
+
+            let li = document.createElement("li");//<li></li>
+            li.classList.add('list-item');//<li class="list-item"></li>
+            li.innerText = input.value;//<li class="list-item">testo</li>
+
+            li.addEventListener('click',function(){
+                li.classList.add('done');
+                targetDone.append(li);
+            })
+
+            target.append(li);//inserisco l'elemento generato nel documento
+
+            input.value = '';//svuoto l'input
+
+        });
+
+
+
+    </script>
+</body>
+</html>

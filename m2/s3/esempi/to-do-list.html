@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="todo"></div>
+    <div id="todo2"></div>
+    
+    <script>
+
+        //creare un sistema per generare to-do lists
+        class Todo{
+
+            constructor(listAreaSelector){
+                this.listArea = document.querySelector(listAreaSelector);
+                this.input = null;
+                this.bottoneSalva = null;
+                this.target = null;
+                this.targetDone = null;
+                this.HTMLinit();
+            }
+
+            HTMLinit(){
+                this.input = document.createElement("input");
+                this.createButtonElement();
+                this.target = document.createElement("div");
+                this.targetDone = document.createElement('div');
+
+                this.listArea.append(this.input, this.bottoneSalva, this.target, this.targetDone);
+            }
+
+            createButtonElement(){
+                this.bottoneSalva = document.createElement("button");
+                this.bottoneSalva.innerText = 'Aggiungi';
+                this.bottoneSalva.addEventListener("click",() => {
+                    this.createNewListElement();
+                })
+            }
+
+            createNewListElement(){
+                let li = document.createElement("li");//<li></li>
+                li.classList.add('list-item');//<li class="list-item"></li>
+                li.innerText = this.input.value;//<li class="list-item">testo</li>
+
+                li.addEventListener('click',function(){
+                    li.classList.add('done');
+                    this.targetDone.append(li);
+                })
+
+                this.target.append(li)
+            }
+
+        }
+
+        new Todo('#todo');
+        new Todo('#todo2');
+
+    </script>
+</body>
+</html>
