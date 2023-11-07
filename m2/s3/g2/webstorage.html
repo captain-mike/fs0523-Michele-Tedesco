@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //localstorage
+        localStorage.setItem('nome','Michele')//salvo qualcosa in localstorage
+        localStorage.setItem('nome','Gabriele')//posso sovrascrivere se utilizzo la stessa chiave
+        
+        let nome = localStorage.getItem('nome');//recupero un valore//
+        
+        //siccome nome potrebbe non esistere nel localstorage, controllo se esiste prima di usarlo
+        if(nome){
+            console.log(nome);
+        }
+        
+        //sessionstorage
+        sessionStorage.setItem('nome','Michele')//salvo qualcosa in sessionstorage
+
+        let nomeSession = sessionStorage.getItem('nome');//recupero un valore//
+        
+        //siccome nome potrebbe non esistere nel localstorage, controllo se esiste prima di usarlo
+        if(nomeSession){
+            console.log(nomeSession);
+        }
+
+
+        //per rimuovere
+
+        // localStorage.removeItem('nome')
+        // sessionStorage.removeItem('nome')
+    </script>
+</body>
+</html>

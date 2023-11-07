@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let userArr = [
+            {
+                id:1,
+                nome: "Mario",
+                cognome: "rossi",
+                anni: 30
+            },
+            {
+                id:2,
+                nome: "Maria",
+                cognome: "rossi",
+                anni: 38
+            }
+        ];
+
+        saveUsers(userArr);
+
+        
+        
+        //prendo gli utenti dal localstorage, ne elimino uno ed aggiorno il localstorage
+        
+        let utentiString = localStorage.getItem('userArr');
+        let userArrayStorage = JSON.parse(utentiString);
+        
+        let risultato = userArrayStorage.filter(u => u.id != 2);//elimino l'utente 2
+        
+        saveUsers(risultato);
+        
+        
+        
+        function saveUsers(array){
+            let stringaJson = JSON.stringify(array)
+            localStorage.setItem("userArr", stringaJson);
+        }
+    </script>
+</body>
+
+</html>

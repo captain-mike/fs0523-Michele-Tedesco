@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let userArr = [
+            {
+                nome: "Mario",
+                cognome: "rossi",
+                anni: 30
+            },
+            {
+                nome: "Maria",
+                cognome: "rossi",
+                anni: 38
+            }
+        ];
+
+        //localstorage ammette solo ed esclusivamente stringhe
+        //quindi se voglio salvare array o oggetti devo convertirli in stringa
+        //quindi procedo con la conversione in JSON
+
+        let userArrJson = JSON.stringify(userArr);//JSON.stringify() prende l'array di oggetti in ingresso e lo restituisce sotto forma di stringa json in formato corretto
+
+        console.log(typeof userArrJson);
+
+        localStorage.setItem('utenti',userArrJson);
+
+
+        //ora provo a recuperare l'array di oggetti salvato in localstorage
+        
+        let stringaUtentiStorage = localStorage.getItem('utenti');
+
+        let userArrayStorage = JSON.parse(stringaUtentiStorage);
+
+        console.log(userArrayStorage);
+
+    </script>
+</body>
+
+</html>
