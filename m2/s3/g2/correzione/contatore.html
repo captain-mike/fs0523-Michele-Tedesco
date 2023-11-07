@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="tempo"></div>
+    
+    <script>
+
+        let tempoSalvato = sessionStorage.getItem('tempo');
+        let contatore;
+        if(!tempoSalvato){
+            contatore = 0;
+        }else{
+            contatore = tempoSalvato;
+        }
+
+        let tempoHTML = document.querySelector('#tempo')
+
+        setInterval(()=>{
+            tempoHTML.innerText = contatore;
+            sessionStorage.setItem('tempo', contatore)
+            contatore++;
+        },1000)
+
+    </script>
+</body>
+</html>
