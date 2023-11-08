@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function call(url){
+            return new Promise(function(resolve, reject){
+
+                const req = new XMLHttpRequest();
+                req.addEventListener("load", reqListener);
+                req.open("GET", url);
+                req.send();
+                
+                function reqListener() {
+                    resolve(this.responseText);
+                }
+            })
+        }
+
+        call('https://jsonplaceholder.typicode.com/users').then(res => console.log(JSON.parse(res)))
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function getData(){
+
+            //https://jsonplaceholder.typicode.com/users
+            
+
+            fetch('https://jsonplaceholder.typicode.com/users')//avvio la chiamata
+            .then(res => res.json())//converto la response in json
+            .then(persone => {
+                
+                //in questo caso persone sarà un array di oggetti(per verificarlo basta visitare l'url di riferimento)
+                
+                persone[0].name//il nome della prima persona dell'array
+                
+            });//utilizzo finalmente i dati
+            
+            /* Vietatissimo
+            setTimeout(()=>{
+                console.log(persona);
+            },5000)
+            */
+        }
+           
+
+        function createData(){
+            let newUser = {
+                "name": "Mrs. Dennis Schulist",
+                "username": "Leopoldo_Corkery",
+                "email": "Karley_Dach@jasper.info",
+                "address": {
+                        "street": "Norberto Crossing",
+                        "suite": "Apt. 950",
+                        "city": "South Christy",
+                        "zipcode": "23505-1337",
+                        "geo": {
+                        "lat": "-71.4197",
+                        "lng": "71.7478"
+                    }
+                },
+                "phone": "1-477-935-8478 x6430",
+                "website": "ola.org",
+                "company": {
+                    "name": "Considine-Lockman",
+                    "catchPhrase": "Synchronised bottom-line interface",
+                    "bs": "e-enable innovative applications"
+                }
+            }
+
+            fetch('https://jsonplaceholder.typicode.com/users',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(newUser)
+            })//avvio la chiamata
+            .then(res => res.json())
+            .then(res => console.log(`Utente ${res.name} creato`));
+
+        }
+
+        
+        function updateData(){
+            let user = {
+                name: "Mrs. Dennis Schulist"
+            }
+
+            fetch('https://jsonplaceholder.typicode.com/users/6',{
+                method:'PATCH',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(user)
+            })//avvio la chiamata
+            .then(res => res.json())
+            .then(res => console.log(res));
+
+        }
+        
+        function deleteData(){
+
+            fetch('https://jsonplaceholder.typicode.com/users/6',{
+                method:'DELETE',
+                headers:{
+                    'Content-Type':'application/json'
+                }
+            })//avvio la chiamata
+            .then(res => res.json())
+            .then(res => console.log(res));
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

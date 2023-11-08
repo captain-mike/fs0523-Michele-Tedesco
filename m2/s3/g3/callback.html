@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="testo1"></div>
+    <div id="testo2"></div>
+    <div id="testo3"></div>
+    
+    <script>
+        function grassetto(t){
+            return `<b>${t}</b>`;
+        }
+
+        function corsivo(_t){
+            return `<i>${_t}</i>`;
+        }
+
+        //il parametro fn è un "segnaposto" per una funzione che verrà definita in futuro
+        function scrivi(selettoreCss,testo,fn){
+            let target = document.querySelector(selettoreCss);
+            target.innerHTML = fn(testo)
+            console.log(target);
+        }
+
+        //posso creare una callback al volo in questo modo
+        scrivi('#testo1','ciao', t => `<b>${t}</b>`);
+        //sia con versione freccia che classica
+        scrivi('#testo1','ciao', function(t){
+            return `<b>${t}</b>`;
+        });
+
+        //utilizzo di funzioni di callback nominali
+        scrivi('#testo2','ciao', grassetto);
+        scrivi('#testo3','ciao', corsivo);
+
+
+        console.log(grassetto);//copia della funzione
+        console.log(grassetto());//risultato della funzione
+
+
+        //usiamo callback da settimane, pensa a questo pezzo di codice
+        document.querySelector('#testo1')
+        .addEventListener('click',function(){
+            console.log('cliccato')
+        })
+
+    </script>
+
+</body>
+</html>
