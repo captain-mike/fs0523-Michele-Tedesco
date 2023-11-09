@@ -33,26 +33,30 @@
 
             e.preventDefault();
 
+            //PRENDO TUTTI I VALORI DEL FORM
             let gusto = document.querySelector('#gusto').value;
             let prezzo = Number(document.querySelector('#prezzo').value);
             let disponibile = Boolean(document.querySelector('#disponibile').value);
 
+            //li uso per costruire un oggetto da inviare al server
             let newPizza = {
                 gusto,
                 prezzo,
                 disponibile
             }
 
+            //faccio la fetch che invia i dati al server
             fetch('http://localhost:3000/pizze',{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
                 },
-                body:JSON.stringify(newPizza)
+                body:JSON.stringify(newPizza)//i dati inviati vengono convertiti in json
             })
             .then(res => res.json())
             .then(pizze => {
     
+                //ho deciso di fare un redirect se la pizza viene creata correttamente, potevo anche mostrare un avviso
                 location.href = '/lista.html'
     
             })

@@ -19,7 +19,7 @@
         <option value="true" selected>disponibile</option>
         <option value="false">Non disponibile</option>
     </select>
-    <button class="btn btn-primary save">Aggiungi</button>
+    <button class="btn btn-danger save">Modifica</button>
 
 </form>
 
@@ -27,18 +27,22 @@
 
     <script>
 
-        let url = new URLSearchParams(location.search);
+        let url = new URLSearchParams(location.search);//questa riga mi permette di leggere eventuali parametri nell'url
 
+        //prelevoi l'id dall'url(esempio ?id=5 )
         let pizzaId = url.get('id');
 
+        //faccio una get alla pizza legata all'id appena prelevato
         fetch('http://localhost:3000/pizze/'+pizzaId)
         .then(res => res.json())
         .then(pizza => {
 
+            //aggancio i campi del form
             let gusto = document.querySelector('#gusto');
             let prezzo = document.querySelector('#prezzo');
             let disponibile = document.querySelector('#disponibile');
 
+            //uso i dati arrivati dalla fetch per riempire i campi del form
             gusto.value = pizza.gusto;
             prezzo.value = pizza.prezzo;
             disponibile.value = pizza.disponibile;
@@ -52,7 +56,7 @@
 
 
         let saveBtn = document.querySelector('.save');
-
+//funzionalità che aggiorna la pizza in questione
         saveBtn.addEventListener('click',function(e){
 
             e.preventDefault();
