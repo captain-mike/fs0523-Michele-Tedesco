@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+const apiUrl = 'https://api.openai.com/v1/chat/completions';
+const apiKey = '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';
+
+async function queryChatGPT() {
+
+    const message = `Riscrivi cappuccetto rosso ma il lupo dispone di bombe termonucleari`;
+    const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            model: 'gpt-3.5-turbo',
+            messages: [
+                { role: 'system', content: 'You are a copywriter and SEO expert.' },
+                { role: 'user', content: message }
+            ]
+        })
+    }).catch(error => {
+        console.error('Si è verificato un errore:', error);
+        res.end('Si è verificato un errore');
+    });
+
+    const data = await response.json();
+    let reply = null;
+    if (data.choices) {
+        reply = data.choices[0].message.content;
+    }
+    console.log(reply);
+}
+queryChatGPT();
+
+    </script>    
+</body>
+</html>
