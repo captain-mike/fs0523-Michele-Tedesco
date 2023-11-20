@@ -1,0 +1,11 @@
+{
+  "name": "ts-dom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ts": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC"
+}
