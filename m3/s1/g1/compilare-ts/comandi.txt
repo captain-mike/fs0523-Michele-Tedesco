@@ -1,0 +1,11 @@
+#Comando per compilare un file una sola volta
+tsc nomefile 
+
+#posso anche inserire più nomi file
+tsc nomefile altronomefile
+
+#comando per compilare un file più volte(ogni volta che salvi il file)
+tsc nomefile -w
+
+#comando per compilare più file unendoli in uno unico
+tsc nomefile altronomefile --outfile nomecartella/nomefile.js
