@@ -18,3 +18,4 @@ var Color;
 console.log(Color); //in questo caso ai colori viene assegnato un valore numerico, che si incrementa come quello degli array
 console.log(Color.Blue); //La lettura di un membro restituirà il suo indice
 console.log(Color['0']); //vengono creati anche indici numerici per ogni membro, da cui è possibile accedere alla rispettiva chiave
+//# sourceMappingURL=enum.js.map

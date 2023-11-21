@@ -12,3 +12,4 @@ let pizza2 = {
     prezzo: 7,
     disponibile: true
 };
+//# sourceMappingURL=oggetti.js.map
