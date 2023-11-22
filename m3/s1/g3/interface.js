@@ -20,3 +20,4 @@ class Studente {
         throw new Error("Method not implemented.");
     }
 }
+let user; //le interfacce si possono usare per tipizzare

@@ -41,3 +41,5 @@ class Studente implements IUtente, IStudente{
     }
 
 }
+
+let user:IUtente; //le interfacce si possono usare per tipizzare
