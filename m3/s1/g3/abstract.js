@@ -30,11 +30,12 @@ class Bicicletta extends Veicolo {
 let bici = new Bicicletta('qualcosa', 'Scott');
 bici.accelera();
 class Automobile extends Veicolo {
-    constructor(modello, marca, maxVel) {
+    constructor(modello, marca, maxVel, nPorte) {
         super(modello, marca, 4, maxVel);
         this.modello = modello;
         this.marca = marca;
         this.maxVel = maxVel;
+        this.nPorte = nPorte;
     }
 }
-let fiat500 = new Automobile('500', 'Fiat', 150);
+let fiat500 = new Automobile('500', 'Fiat', 150, 3);

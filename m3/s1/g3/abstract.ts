@@ -1,4 +1,4 @@
-class Veicolo{
+abstract class Veicolo{
     public vel:number = 0;
     constructor(
         public modello:string,
@@ -16,6 +16,7 @@ class Veicolo{
 }
 
 class Bicicletta extends Veicolo{
+
     constructor(public modello:string, public marca:string){
         super(modello,marca,2,40);
     }
@@ -31,10 +32,11 @@ let bici = new Bicicletta('qualcosa','Scott');
 bici.accelera();
 
 class Automobile extends Veicolo{
-    constructor(public modello:string, public marca:string, public maxVel:number){
+    constructor(public modello:string, public marca:string, public maxVel:number, public nPorte:number){
         super(modello,marca,4,maxVel);
     }
 }
 
-let fiat500 = new Automobile('500','Fiat',150);
+let fiat500 = new Automobile('500','Fiat',150, 3);
+
 
