@@ -7,19 +7,24 @@ abstract class Veicolo{
         public maxVel:number
     ){}
 
-    accelera(){
-        this.vel++;
-    }
+    abstract accelera():void
+    
     frena(){
         this.vel--;
     }
 }
+
 
 class Bicicletta extends Veicolo{
 
     constructor(public modello:string, public marca:string){
         super(modello,marca,2,40);
     }
+
+    accelera(){
+        this.vel++;
+    }
+
     montaRotelle(){
         this.nRuote = 4;
     }
@@ -34,6 +39,9 @@ bici.accelera();
 class Automobile extends Veicolo{
     constructor(public modello:string, public marca:string, public maxVel:number, public nPorte:number){
         super(modello,marca,4,maxVel);
+    }
+    accelera(){
+        this.vel += 10;
     }
 }
 

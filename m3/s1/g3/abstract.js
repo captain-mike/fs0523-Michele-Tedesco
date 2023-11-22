@@ -7,9 +7,6 @@ class Veicolo {
         this.maxVel = maxVel;
         this.vel = 0;
     }
-    accelera() {
-        this.vel++;
-    }
     frena() {
         this.vel--;
     }
@@ -19,6 +16,9 @@ class Bicicletta extends Veicolo {
         super(modello, marca, 2, 40);
         this.modello = modello;
         this.marca = marca;
+    }
+    accelera() {
+        this.vel++;
     }
     montaRotelle() {
         this.nRuote = 4;
@@ -36,6 +36,9 @@ class Automobile extends Veicolo {
         this.marca = marca;
         this.maxVel = maxVel;
         this.nPorte = nPorte;
+    }
+    accelera() {
+        this.vel += 10;
     }
 }
 let fiat500 = new Automobile('500', 'Fiat', 150, 3);
