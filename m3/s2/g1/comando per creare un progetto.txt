@@ -1,1 +1,1 @@
-ng new --no-standalone --routing --ssr=false
+ng new nomeProgetto --no-standalone --routing --ssr=false
