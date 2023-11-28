@@ -7,6 +7,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ChiSiamoComponent } from './pages/chi-siamo/chi-siamo.component';
+import { DataBindingComponent } from './argomenti/data-binding/data-binding.component';
+import { FormsModule } from '@angular/forms';
+import { EventiComponent } from './argomenti/eventi/eventi.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { ChiSiamoComponent } from './pages/chi-siamo/chi-siamo.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ChiSiamoComponent
+    ChiSiamoComponent,
+    DataBindingComponent,
+    EventiComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

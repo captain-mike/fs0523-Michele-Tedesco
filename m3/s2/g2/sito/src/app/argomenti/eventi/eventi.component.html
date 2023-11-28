@@ -1,0 +1,33 @@
+
+
+<button class="btn btn-primary" (click)="showAlert()">Lancia un alert</button>
+
+<button class="btn btn-primary" (click)="showCustomAlert('Hello World!')">Lancia un alert</button>
+
+<hr>
+
+<button (click)="show = !show">mostra/nascondi</button>
+
+<div *ngIf="show">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius sunt earum, accusantium delectus nam in temporibus ut iusto tenetur modi suscipit quod rem ducimus natus neque? Rem animi molestias mollitia.
+</div>
+<hr>
+Altro modo:
+<button (click)="toggleShow()">mostra/nascondi</button>
+
+<div *ngIf="show">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius sunt earum, accusantium delectus nam in temporibus ut iusto tenetur modi suscipit quod rem ducimus natus neque? Rem animi molestias mollitia.
+</div>
+
+<hr>
+Altro modo ancora:
+<button
+  [style.backgroundColor]="show ? 'red' : 'blue'"
+  [innerText]="show ? 'nascondi' : 'mostra'"
+ (click)="toggleShow()"></button>
+
+<div *ngIf="show">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius sunt earum, accusantium delectus nam in temporibus ut iusto tenetur modi suscipit quod rem ducimus natus neque? Rem animi molestias mollitia.
+</div>
+<hr>
+<button (click)="analizzaEvento($event)">Analizza evento</button>
