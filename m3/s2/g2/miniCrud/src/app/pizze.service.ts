@@ -27,4 +27,11 @@ export class PizzeService {
       }
   ];
 
+  getActivePizza(){
+    return this.pizze.filter(p => p.disponibile)
+  }
+  getInactivePizza(){
+    return this.pizze.filter(p => !p.disponibile)
+  }
+
 }

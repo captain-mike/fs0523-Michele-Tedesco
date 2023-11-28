@@ -15,7 +15,7 @@ export class Page2Component {
 
   //è un metodo di engular, si avvia da solo quando viene inizializzata la classe
   ngOnInit(){
-    this.pizze = this.pizzeSvc.pizze
+    this.pizze = this.pizzeSvc.getActivePizza()
   }
 
 }
