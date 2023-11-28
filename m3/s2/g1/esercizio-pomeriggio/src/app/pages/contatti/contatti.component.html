@@ -1,0 +1,11 @@
+<h1>Contatti</h1>
+
+<input type="text" [(ngModel)]="nome">
+
+{{nome}}
+<hr>
+<button (click)="visibile = !visibile">Mostra/nascondi</button>
+
+<div *ngIf="visibile" >
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur explicabo qui officiis quas obcaecati omnis iure aliquam quis accusantium nam sint sed itaque nisi recusandae quibusdam tenetur mollitia, molestias vero!
+</div>
