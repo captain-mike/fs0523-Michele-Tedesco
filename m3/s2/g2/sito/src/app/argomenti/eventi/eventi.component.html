@@ -21,8 +21,12 @@ Altro modo:
 
 <hr>
 Altro modo ancora:
-<button
+<!-- <button
   [style.backgroundColor]="show ? 'red' : 'blue'"
+  [innerText]="show ? 'nascondi' : 'mostra'"
+ (click)="toggleShow()"></button> -->
+ <button
+  [ngStyle]="{backgroundColor: show ? 'red' : 'blue'}"
   [innerText]="show ? 'nascondi' : 'mostra'"
  (click)="toggleShow()"></button>
 

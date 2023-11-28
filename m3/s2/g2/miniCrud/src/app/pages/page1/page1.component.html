@@ -1,0 +1,23 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>gusto</th>
+      <th>prezzo</th>
+      <th>disponibile</th>
+      <th>azioni</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pizza of pizze; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{pizza.gusto}}</td>
+      <td>{{pizza.prezzo}}</td>
+      <td>{{pizza.disponibile}}</td>
+      <td><button (click)="pizza.disponibile = !pizza.disponibile">Abilita/disabilita</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
