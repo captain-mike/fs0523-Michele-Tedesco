@@ -7,6 +7,7 @@ import { TabellaComponent } from './components/tabella/tabella.component';
 import { FormComponent } from './components/form/form.component';
 import { Comp1Component } from './argomento/comp1/comp1.component';
 import { Comp2Component } from './argomento/comp2/comp2.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Comp2Component } from './argomento/comp2/comp2.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
