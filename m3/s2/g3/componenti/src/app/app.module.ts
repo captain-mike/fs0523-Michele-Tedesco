@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProjectionComponent } from './projection/projection.component';
+import { MultiProjectionComponent } from './multi-projection/multi-projection.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProjectionComponent,
+    MultiProjectionComponent
   ],
   imports: [
     BrowserModule,
