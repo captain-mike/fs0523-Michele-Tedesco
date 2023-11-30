@@ -1,0 +1,17 @@
+<form>
+  <input type="text" placeholder="Gusto" [(ngModel)]="newPizza.gusto" name="gusto" class="form-control">
+  <input type="number" placeholder="Prezzo" [(ngModel)]="newPizza.prezzo" name="prezzo" class="form-control">
+  <select name="active" [(ngModel)]="newPizza.active" class="form-control">
+    <option value="1">Active</option>
+    <option value="0">Not active</option>
+  </select>
+  <button (click)="save()" class="btn btn-success">Salva</button>
+</form>
+
+<div *ngIf="loading" class="alert alert-warning">
+  Salvataggio pizza in corso
+</div>
+
+<div *ngIf="oldPizza">
+    Hai creato la pizza {{oldPizza.gusto}}
+</div>
