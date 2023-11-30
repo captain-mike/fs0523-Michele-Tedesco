@@ -4,6 +4,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { CreateComponent } from './pages/create/create.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { EditComponent } from './pages/edit/edit.component';
+import { ListaComponent } from './pages/lista/lista.component';
 
 const routes: Routes = [
   {
@@ -13,15 +14,21 @@ const routes: Routes = [
   },
   {
     path:'menu',
-    component: MenuComponent
-  },
-  {
-      path: 'menu/edit/:id',
-      component: EditComponent
-  },
-  {
-    path:'crea-pizza',
-    component: CreateComponent
+    component: MenuComponent,
+    children:[
+      {
+        path:'',// "/menu"
+        component:ListaComponent
+      },
+      {
+        path: 'edit/:id',// "/menu/edit/:id"
+        component: EditComponent
+      },
+      {
+        path:'crea-pizza',// "/menu/crea-pizza"
+        component: CreateComponent
+      }
+    ]
   },
   {
     path:'**',//è la pagina non found

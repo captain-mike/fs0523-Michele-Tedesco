@@ -9,6 +9,7 @@ import { EditComponent } from './pages/edit/edit.component';
 import { HeaderComponent } from './components/header/header.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { FormsModule } from '@angular/forms';
+import { ListaComponent } from './pages/lista/lista.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     CreateComponent,
     EditComponent,
     HeaderComponent,
-    Page404Component
+    Page404Component,
+    ListaComponent
   ],
   imports: [
     BrowserModule,

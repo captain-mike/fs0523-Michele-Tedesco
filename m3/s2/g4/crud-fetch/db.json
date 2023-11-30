@@ -3,7 +3,7 @@
     {
       "active": true,
       "gusto": "Diavola",
-      "prezzo": 1,
+      "prezzo": 1.5,
       "id": 1
     },
     {
@@ -17,12 +17,6 @@
       "gusto": "Sunt consequuntur nu",
       "prezzo": 17,
       "id": 3
-    },
-    {
-      "active": false,
-      "gusto": "Officiis id laudanti",
-      "prezzo": 98,
-      "id": 4
     }
   ]
 }

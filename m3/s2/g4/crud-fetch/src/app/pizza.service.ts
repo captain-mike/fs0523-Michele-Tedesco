@@ -19,6 +19,7 @@ export class PizzaService {
   }
 
   create(pizza:Partial<Pizza>):Promise<Pizza>{
+    pizza = this.toBoolean(pizza);
     return fetch(this.apiUrl,{
       method:'POST',
       headers:{
@@ -29,6 +30,7 @@ export class PizzaService {
   }
 
   update(pizza:Pizza):Promise<Pizza>{
+    pizza = this.toBoolean(pizza);
     return fetch(this.apiUrl+`/${pizza.id}`,{
       method:'PUT',
       headers:{
@@ -45,6 +47,11 @@ export class PizzaService {
         'Content-Type':'application/json'
       }
     }).then(res => res.json())
+  }
+
+  toBoolean<T>(pizza:Partial<Pizza>){
+    pizza.active = Boolean(Number(pizza.active));
+    return pizza as T
   }
 
 }

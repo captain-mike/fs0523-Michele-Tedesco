@@ -25,10 +25,13 @@ export class CreateComponent {
 
   save(){
     this.loading = true;
-    this.newPizza.active = Boolean(Number(this.newPizza.active));
+
     this.pizzaSvc.create(this.newPizza).then(res => {
       this.loading = false
       this.oldPizza = res;
+      this.newPizza = {
+        active:'0'
+      }
 
       // setTimeout(()=>{
       //   this.router.navigate(['/'])
