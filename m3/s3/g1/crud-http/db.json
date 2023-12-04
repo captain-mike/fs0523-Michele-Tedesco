@@ -1,0 +1,22 @@
+{
+  "pizza": [
+    {
+      "active": "false",
+      "gusto": "Irure inventore ex t",
+      "prezzo": 17,
+      "id": 1
+    },
+    {
+      "active": "false",
+      "gusto": "Ut excepturi rem ut ",
+      "prezzo": 5,
+      "id": 2
+    },
+    {
+      "active": "true",
+      "gusto": "Ipsam officia omnis ",
+      "prezzo": 93,
+      "id": 4
+    }
+  ]
+}
