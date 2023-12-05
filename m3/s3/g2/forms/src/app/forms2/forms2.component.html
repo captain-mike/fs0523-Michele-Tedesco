@@ -1,0 +1,50 @@
+<form (ngSubmit)="submit(f)" #f="ngForm">
+
+  <input type="text" #nome="ngModel"
+  required class="form-control" ngModel name="nome" placeholder="Il tuo nome">
+  <div *ngIf="nome.invalid && nome.dirty" class="alert alert-warning">
+    Devi inserire il nome
+  </div>
+
+  <input type="text" #cognome="ngModel"
+  required class="form-control" ngModel name="cognome" placeholder="Il tuo cognome">
+  <div *ngIf="cognome.invalid && cognome.dirty" class="alert alert-warning">
+    Devi inserire il cognome
+  </div>
+
+  <div ngModelGroup="authData" #authGroup="ngModelGroup" class="form-row row">
+    <div class="form-group col-6">
+      <input type="email" #email="ngModel" required ngModel [pattern]="emailRegEx" name="email" placeholder="Scrivi la tua email" class="form-control">
+      <div *ngIf="isEmail(email)" class="alert alert-warning">
+        La mail non segue il formato richiesto
+      </div>
+      <div *ngIf="isEmpty(email)" class="alert alert-warning">
+        Inserisci la mail
+      </div>
+    </div>
+
+    <div class="form-group col-6">
+      <input type="password" ngModel name="password" placeholder="Scrivi la password" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-check" *ngFor="let g of generi">
+      <input [id]="g" [value]="g" class="form-check-input"
+      type="radio" ngModel name="genere">
+      <label [for]="g">{{g}}</label>
+    </div>
+  </div>
+
+
+  <button  [disabled]="f.invalid" class="btn btn-primary">Invia</button>
+  <div *ngIf="f.invalid && f.dirty" class="alert alert-warning">
+    Devi compilare tutti i campi
+  </div>
+
+</form>
+
+{{this.form.value | json}}
+<br>
+
+<button (click)="setDati()" class="btn btn-success">Inserisci valori</button>

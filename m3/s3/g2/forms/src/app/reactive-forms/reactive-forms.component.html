@@ -1,0 +1,49 @@
+<!--[formgroup]="form" collega l'attuale form aalla proprietà form che si trova nel ts del component-->
+<form [formGroup]="form">
+
+  <input type="text" class="form-control"
+   formControlName="nome" placeholder="Il tuo nome">
+  <div *ngIf="!isValid('nome') && isTouched('nome')" class="alert alert-warning">
+    Devi inserire il nome
+  </div>
+  {{isValid('nome')}}
+
+  <input type="text" class="form-control"
+  formControlName="cognome" placeholder="Il tuo cognome">
+  <div *ngIf="!isValid('cognome') && isTouched('cognome')" class="alert alert-warning">
+    Devi inserire il cognome
+  </div>
+
+  <div formGroupName="authData" class="form-row row">
+    <div class="form-group col-6">
+      <input type="email" formControlName="email" placeholder="Scrivi la tua email" class="form-control">
+    </div>
+    <div *ngIf="!isValid('authData.email') && isTouched('authData.email')" class="alert alert-warning">
+      Devi inserire l'email
+    </div>
+    {{getCustomMessage('authData.email')}}
+
+    <div class="form-group col-6">
+      <input type="password" formControlName="password" placeholder="Scrivi la password" class="form-control">
+    </div>
+
+    <div formArrayName="sports">
+      <h5>Sports praticati</h5>
+      <button (click)="addSport()" class="btn btn-success">Aggiungi sport</button>
+      <div class="form-group" *ngFor="let sport of getSports(); let i = index">
+        <input type="text" class="form-control" [formControlName]="i" >
+      </div>
+    </div>
+
+  </div>
+
+
+  <button (click)="send()" class="btn btn-primary">Invia</button>
+  <div class="alert alert-warning">
+    Devi compilare tutti i campi
+  </div>
+
+</form>
+
+
+
