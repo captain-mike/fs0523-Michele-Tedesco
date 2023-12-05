@@ -31,11 +31,12 @@
       <h5>Sports praticati</h5>
       <button (click)="addSport()" class="btn btn-success">Aggiungi sport</button>
       <div class="form-group" *ngFor="let sport of getSports(); let i = index">
-        <input type="text" class="form-control" [formControlName]="i" >
+        <input type="text" class="form-control" [formControlName]="i" [value]="sport.value" >
       </div>
     </div>
 
   </div>
+
 
 
   <button (click)="send()" class="btn btn-primary">Invia</button>

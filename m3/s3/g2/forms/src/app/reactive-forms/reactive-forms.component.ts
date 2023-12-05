@@ -17,6 +17,7 @@ export class ReactiveFormsComponent {
     this.form = this.fb.group({//il form
       nome: this.fb.control(null,[Validators.required]),//campo nome
       cognome: this.fb.control(null,[Validators.required]),//campo cognome
+      sports: this.fb.array([]),
       authData: this.fb.group({
         email: this.fb.control(
           null, //valore
@@ -24,8 +25,7 @@ export class ReactiveFormsComponent {
           this.emailEsistente//validator asincroni
           ),
         password: this.fb.control(null,[Validators.required])
-      }),
-      sports: this.fb.array([])
+      })
     })
 
   }
@@ -37,7 +37,7 @@ export class ReactiveFormsComponent {
   }
 
   getSports(){
-    return  (this.form.get('sports') as FormArray).controls
+    return  (this.form.get('sports') as FormArray).controls || 0
   }
 
   emailProibite:string[] = ['emilio@plances.it','giulio.marinelli@icloud.com'];
@@ -97,6 +97,8 @@ export class ReactiveFormsComponent {
   }
 
   getCustomMessage(fieldName:string){
+    if(this.form.get(fieldName)?.errors) return ''
+
     return this.form.get(fieldName)?.errors!['message']
   }
 
